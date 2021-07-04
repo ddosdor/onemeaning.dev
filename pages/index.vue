@@ -1,5 +1,6 @@
 <template>
   <div>
+    {{ posts }}
     <PostsList
       v-if="!isLoading"
       :posts-list="posts"
@@ -17,7 +18,10 @@ export default defineComponent({
     PostsList,
   },
   setup() {
-    const { posts, isLoading } = useBlogPosts();
+    const { posts, isLoading, getPosts } = useBlogPosts();
+
+    getPosts();
+
     return {
       isLoading,
       posts,
