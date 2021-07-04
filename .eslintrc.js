@@ -23,6 +23,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     'max-len': ['error', { code: 160 }],
+    'linebreak-style': 0,
     'import/no-extraneous-dependencies': [
       0,
       {
