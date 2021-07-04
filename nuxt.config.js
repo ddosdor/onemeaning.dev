@@ -1,3 +1,7 @@
+import * as path from 'path';
+
+const resolve = (dir) => path.join(__dirname, dir);
+
 export default {
   ssr: false,
   target: 'static',
@@ -25,6 +29,22 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/composition-api/module',
   ],
-  modules: [],
-  build: {},
+  modules: [
+    '@nuxt/content',
+  ],
+  build: {
+    extend(config) {
+      // eslint-disable-next-line no-param-reassign
+      config.resolve.alias['@$'] = resolve('');
+    },
+  },
+  generate: {
+    async routes() {
+      // eslint-disable-next-line global-require
+      const { $content } = require('@nuxt/content');
+      const files = await $content('blog').fetch();
+
+      return files.map((file) => (file.path === '/index' ? '/' : file.path));
+    },
+  },
 };

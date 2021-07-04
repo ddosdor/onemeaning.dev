@@ -1,6 +1,6 @@
 {
   "directories": {
-    "views": "views",
+    "views": "pages",
     "components": "components",
     "vuex": "store",
     "modules": "modules",

@@ -1,3 +1,7 @@
+const path = require('path');
+
+const resolve = (dir) => path.join(__dirname, dir);
+
 module.exports = {
   root: true,
   env: {
@@ -20,7 +24,16 @@ module.exports = {
   plugins: [
     'vue',
   ],
-  // add your custom rules here
+  settings: {
+    'import/resolver': {
+      'eslint-import-resolver-custom-alias': {
+        alias: {
+          '@': resolve(''),
+        },
+        extensions: ['.ts', '.vue'],
+      },
+    },
+  },
   rules: {
     'max-len': ['error', { code: 160 }],
     'linebreak-style': 0,
