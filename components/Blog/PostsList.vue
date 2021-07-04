@@ -2,7 +2,7 @@
   <div class="PostsList">
     <ul>
       <li
-        v-for="(post, index) in filteredPostsList"
+        v-for="(post, index) in postsList"
         :key="`blog-post-${index}`"
       >
         <PostPreview :post="post" />

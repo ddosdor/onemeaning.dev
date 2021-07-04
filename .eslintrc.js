@@ -37,6 +37,7 @@ module.exports = {
   rules: {
     'max-len': ['error', { code: 160 }],
     'linebreak-style': 0,
+    'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': [
       0,
       {
@@ -44,6 +45,16 @@ module.exports = {
         optionalDependencies: false,
         peerDependencies: false,
       }],
+    'import/extensions': [
+      'error',
+      'never',
+      {
+        ts: 'never',
+        vue: 'always',
+        json: 'never',
+        png: 'never',
+      },
+    ],
 
   },
 };

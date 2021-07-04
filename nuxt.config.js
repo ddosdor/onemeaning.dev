@@ -36,6 +36,8 @@ export default {
     extend(config) {
       // eslint-disable-next-line no-param-reassign
       config.resolve.alias['@$'] = resolve('');
+      // eslint-disable-next-line no-param-reassign
+      config.resolve.extensions = ['.js', '.ts', '.vue', '.json'];
     },
   },
   generate: {
