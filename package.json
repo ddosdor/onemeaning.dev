@@ -12,7 +12,7 @@
     "lint": "yarn lint:js && yarn lint:style",
     "test": "jest",
     "predeploy": "nuxt generate",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -t true"
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
