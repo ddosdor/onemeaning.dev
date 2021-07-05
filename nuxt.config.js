@@ -6,7 +6,7 @@ export default {
   ssr: false,
   target: 'static',
   router: {
-    base: '/onemeaning-dev/',
+    base: '/onemeaning.dev/',
   },
   head: {
     title: 'onemeaning-dev',
