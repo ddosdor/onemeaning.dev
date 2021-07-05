@@ -1,6 +1,6 @@
 ---
-title: My Second blog post
-date: 2020-05-22T20:47:18
+title: 2-post
+date: 2020-05-21T20:47:18
 excerpt:  Here is my second blog post
 ---
 

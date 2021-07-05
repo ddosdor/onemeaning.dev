@@ -5,7 +5,7 @@
       <a :href="post.path" class="">{{ post.title }}</a>
     </h2>
     <p v-if="post.excerpt" class="">
-      {{ post.excerpt }}
+      <nuxt-content :document="{ body: post.excerpt }" />
     </p>
     <nuxt-link class="" :to="post.path">
       Read More >
