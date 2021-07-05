@@ -4,7 +4,7 @@ const resolve = (dir) => path.join(__dirname, dir);
 
 export default {
   ssr: false,
-  target: 'spa',
+  target: 'static',
   router: {
     base: '/onemeaning.dev/',
   },
