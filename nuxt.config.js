@@ -5,6 +5,9 @@ const resolve = (dir) => path.join(__dirname, dir);
 export default {
   ssr: false,
   target: 'static',
+  router: {
+    base: '/onemeaning-dev/',
+  },
   head: {
     title: 'onemeaning-dev',
     htmlAttrs: {
