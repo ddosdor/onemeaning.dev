@@ -20,20 +20,22 @@ export default defineComponent({
 
     function goToNextPage() {
       const { page } = route.value.query;
+      const newPage = page || 1;
       router.push({
         query: {
           ...route.value.query,
-          page: String(Number(page) + 1),
+          page: String(Number(newPage) + 1),
         },
       });
     }
 
     function previousPage() {
       const { page } = route.value.query;
+      const newPage = page || 1;
       router.push({
         query: {
           ...route.value.query,
-          page: String(Number(page) - 1),
+          page: String(Number(newPage) - 1),
         },
       });
     }
@@ -45,8 +47,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="sass" scoped>
-.PostsPreviewListPagination
-  // component style
-</style>
