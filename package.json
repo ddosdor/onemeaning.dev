@@ -35,7 +35,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-import-resolver-custom-alias": "^1.2.0",
     "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-vue": "^7.12.1",
+    "eslint-plugin-vue": "^7.13.0",
     "fibers": "^5.0.0",
     "gh-pages": "^3.2.3",
     "jest": "^27.0.5",
