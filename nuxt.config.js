@@ -30,7 +30,9 @@ export default {
   styleResources: {
     sass: ['~/assets/style/variables.sass'],
   },
-  plugins: [],
+  plugins: [
+    '~/plugins/vue-rough-notation.js',
+  ],
   components: true,
   buildModules: [
     '@nuxtjs/style-resources',

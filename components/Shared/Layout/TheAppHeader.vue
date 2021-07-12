@@ -14,7 +14,12 @@
                    md:text-2xl
                   "
       >
-        onemeaning|<span class="font-light">dev</span>
+        <RoughNotation :is-show="true"
+                       type="highlight"
+                       color="#6EE7B7"
+        >
+          onemeaning|<span class="font-light">dev</span>
+        </RoughNotation>
       </span>
       <small class="hidden text-xs font-thin
                     md:block

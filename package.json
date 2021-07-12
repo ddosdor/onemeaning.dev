@@ -52,6 +52,7 @@
     "stylelint": "^13.13.1",
     "stylelint-config-sass-guidelines": "^8.0.0",
     "ts-jest": "^27.0.3",
-    "vue-jest": "^3.0.4"
+    "vue-jest": "^3.0.4",
+    "vue-rough-notation": "^0.1.11"
   }
 }
