@@ -53,6 +53,7 @@ module.exports = {
         vue: 'always',
         json: 'never',
         png: 'never',
+        svg: 'always',
       },
     ],
     'vue/max-attributes-per-line': ['error', {

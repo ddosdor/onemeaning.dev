@@ -24,11 +24,17 @@ export default {
     ],
   },
   css: [
+    '~/assets/style/variables.sass',
     '~/assets/style/style.sass',
   ],
+  styleResources: {
+    sass: ['~/assets/style/variables.sass'],
+  },
   plugins: [],
   components: true,
   buildModules: [
+    '@nuxtjs/style-resources',
+    '@nuxtjs/svg',
     '@nuxt/typescript-build',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss',
