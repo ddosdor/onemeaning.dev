@@ -12,7 +12,7 @@ import { defineComponent } from '@nuxtjs/composition-api';
 import PostsPreviewList from '@/components/Blog/PostsPreviewList.vue';
 import PostsPreviewListPagination from '@/components/Blog/PostsPreviewListPagination.vue';
 
-import { BlogPost } from '@/types.d';
+import { BlogPostType } from '@/utils/types';
 
 export default defineComponent({
   components: {
@@ -27,7 +27,7 @@ export default defineComponent({
       .sortBy('date', 'desc')
       .skip(skip)
       .limit(2)
-      .fetch<BlogPost>();
+      .fetch<BlogPostType>();
     return { posts };
   },
   watchQuery: ['page'],

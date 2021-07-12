@@ -47,21 +47,21 @@
                 md:ml-6
                "
     >
-      <a href="https://twitter.com/ddosdor"
+      <a :href="twitter"
          target="__blank"
       >
         <UiSocialIcon twitter
                       as-link
         />
       </a>
-      <a href="https://www.linkedin.com/in/sebastian-drzewicki-947459b0/"
+      <a :href="linkedin"
          target="__blank"
       >
         <UiSocialIcon linkedin
                       as-link
         />
       </a>
-      <a href="https://github.com/ddosdor"
+      <a :href="github"
          target="__blank"
       >
         <UiSocialIcon github
@@ -74,6 +74,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
+import { useSocialLink } from '@/composables';
 import UiSocialIcon from '@/components/Shared/Ui/UiSocialIcon.vue';
 
 export default defineComponent({
@@ -82,7 +83,12 @@ export default defineComponent({
     UiSocialIcon,
   },
   setup() {
-    // component setup
+    const { github, linkedin, twitter } = useSocialLink();
+    return {
+      github,
+      linkedin,
+      twitter,
+    };
   },
 });
 </script>

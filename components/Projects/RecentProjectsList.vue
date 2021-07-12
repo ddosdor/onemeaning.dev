@@ -1,5 +1,5 @@
 <template>
-  <div class="RecentProjectsList">
+  <div class="RecentProjectsList mt-6">
     Recent Projects List
   </div>
 </template>
