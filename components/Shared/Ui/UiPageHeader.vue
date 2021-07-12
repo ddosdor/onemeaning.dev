@@ -8,7 +8,7 @@
     <h2 v-if="!main">
       <RoughNotation :is-show="highlight"
                      type="highlight"
-                     color="#DBEAFE"
+                     :color="color"
       >
         <span class="UiPageHeader__title">{{ title }}</span>
       </RoughNotation>
@@ -18,6 +18,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
+import { useRandomHighlightColors } from '@/composables';
 
 export default defineComponent({
   name: 'UiPageHeader',
@@ -28,6 +29,10 @@ export default defineComponent({
       type: String,
       default: 'Hi, i\'m Header',
     },
+  },
+  setup() {
+    const { color } = useRandomHighlightColors();
+    return { color };
   },
 });
 </script>

@@ -1,6 +1,6 @@
 <template>
   <header class="TheAppHeader
-                 sticky p-4 flex flex-col items-center
+                 sticky top-0 z-10 p-4 flex flex-col items-center bg-white
                  md:px-12 md:flex-row
                  lg:px-20 lg:w-4/5 lg:mx-auto
                  2xl:px-32
@@ -28,8 +28,8 @@
         some stuff about... lorem ipsum...
       </small>
     </a>
-    <nav class="space-x-3
-                md:ml-auto
+    <nav class="space-x-3 mb-4
+                md:ml-auto md:mb-0
                "
     >
       <nuxt-link class="app-link"
