@@ -23,7 +23,9 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
   },
-  css: [],
+  css: [
+    '~/assets/style/style.sass',
+  ],
   plugins: [],
   components: true,
   buildModules: [
