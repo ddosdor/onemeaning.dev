@@ -1,1 +1,1 @@
-export * from './useRandomHighlighColors';
+export * from './useRandomHighlightColors';
