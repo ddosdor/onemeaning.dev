@@ -1,9 +1,9 @@
 <template>
   <main class="PageContent
-              p-4
-              md:px-12
-              lg:px-20 lg:w-4/5 lg:mx-auto
-              2xl:px-32
+               p-4 flex-grow
+               md:px-12 pt-20
+               lg:px-20 lg:w-4/5 lg:mx-auto
+               2xl:px-32
               "
   >
     <slot />

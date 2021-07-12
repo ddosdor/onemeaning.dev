@@ -1,16 +1,16 @@
 <template>
   <header class="TheAppHeader
-                 sticky container p-4 flex flex-col items-center
+                 sticky p-4 flex flex-col items-center
                  md:px-12 md:flex-row
                  lg:px-20 lg:w-4/5 lg:mx-auto
                  2xl:px-32
                 "
   >
-    <a class="font-bold text-xl mb-4
+    <a class="text-xl mb-4
               md:mb-0
              "
     >
-      <span class="font-bold text-xl
+      <span class="text-xl
                    md:text-2xl
                   "
       >
@@ -18,7 +18,7 @@
                        type="highlight"
                        color="#6EE7B7"
         >
-          onemeaning|<span class="font-light">dev</span>
+          <span class="font-bold">onemeaning|</span><span class="font-light">dev</span>
         </RoughNotation>
       </span>
       <small class="hidden text-xs font-thin
