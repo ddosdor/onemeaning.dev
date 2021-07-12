@@ -1,20 +1,24 @@
 <template>
   <div>
-    <PageHeader />
-    <Nuxt />
-    <PageFooter />
+    <TheAppHeader />
+    <TheAppContent>
+      <Nuxt />
+    </TheAppContent>
+    <TheAppFooter />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
-import PageHeader from '@/components/Common/PageHeader.vue';
-import PageFooter from '@/components/Common/PageFooter.vue';
+import TheAppHeader from '@/components/Shared/Layout/TheAppHeader.vue';
+import TheAppContent from '@/components/Shared/Layout/TheAppContent.vue';
+import TheAppFooter from '@/components/Shared/Layout/TheAppFooter.vue';
 
 export default defineComponent({
   components: {
-    PageHeader,
-    PageFooter,
+    TheAppHeader,
+    TheAppContent,
+    TheAppFooter,
   },
   setup() {
 

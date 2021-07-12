@@ -55,6 +55,12 @@ module.exports = {
         png: 'never',
       },
     ],
-
+    'vue/max-attributes-per-line': ['error', {
+      singleline: 1,
+      multiline: {
+        max: 1,
+        allowFirstLine: true,
+      },
+    }],
   },
 };
