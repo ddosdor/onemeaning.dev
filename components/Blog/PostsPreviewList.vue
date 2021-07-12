@@ -17,7 +17,7 @@ import {
 } from '@nuxtjs/composition-api';
 import PostsPreviewListItem from '@/components/Blog/PostsPreviewListItem.vue';
 
-import { BlogPost } from '@/types.d';
+import { BlogPostType } from '@/utils/types';
 
 export default defineComponent({
   name: 'PostsList',
@@ -26,8 +26,8 @@ export default defineComponent({
   },
   props: {
     postsList: {
-      type: [] as PropType<BlogPost[]>,
-      default: () => ([] as BlogPost[]),
+      type: [] as PropType<BlogPostType[]>,
+      default: () => ([] as BlogPostType[]),
     },
   },
 });
