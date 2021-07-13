@@ -16,3 +16,12 @@ export type BlogPostType = {
   tags?: string[]
   path: string
 }
+
+export type ProjectPostType = {
+  [key: string]: string
+  title: string
+  date: string
+  npm: string
+  github: string
+  description: string
+}
