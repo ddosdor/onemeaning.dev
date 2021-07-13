@@ -1,2 +1,3 @@
 export * from './useRandomHighlightColors';
 export * from './useSocialLinks';
+export * from './useRecentBlogPosts';

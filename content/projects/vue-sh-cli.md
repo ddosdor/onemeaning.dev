@@ -1,11 +1,12 @@
 ---
-title: 6 Post
-date: 2020-05-25T20:47:18
-excerpt: Here is a little bit about my first post.
-thumbnail: images/blog/thumbnails/example.jpeg
+title: vue-sh-cli
+date: 2020-05-20T20:47:18
+npm: some_npm_link
+github: some_github_link
+description: vue-sh-cli Lorem ipsum dolor sit amet
 ---
 
-# My first blog post
+# vue-sh-cli
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere posuere tellus, non porttitor turpis interdum vitae. Phasellus leo odio, ornare at risus sed, ornare rutrum mi. Suspendisse tempor, odio eu facilisis dapibus, orci orci vulputate purus, eget porta tortor nisi eget sapien. Donec vehicula vitae ex non malesuada. Sed porttitor pulvinar dui, in fermentum ex bibendum commodo. Fusce sed mollis purus. Pellentesque vehicula enim nec placerat ultrices.
 <!--more-->

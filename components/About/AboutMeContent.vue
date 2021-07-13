@@ -9,12 +9,12 @@
                "
     >
       <figure>
-        <img class="inline object-cover w-20 h-20 mb-4 ring-1 ring-red-300 rounded-full
+        <!-- <img class="inline object-cover w-20 h-20 mb-4 ring-1 ring-red-300 rounded-full
                     md:w-28 md:h-28
                     lg:w-56 lg:h-56 lg:relative lg:bottom-10
                    "
              src="~/assets/images/me.png"
-        >
+        > -->
       </figure>
     </div>
     <div class="space-y-3">

@@ -2,7 +2,7 @@
   <div>
     <UiPageSection>
       <UiPageHeader main
-                    title="Hi there, I'm Sebastian."
+                    title="Hi there, I'm ...."
       />
       <AboutMeContent />
     </UiPageSection>

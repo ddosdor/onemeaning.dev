@@ -1,4 +1,4 @@
-import { IContentDocument } from '@nuxt/content/types/content.d';
+export { IContentDocument } from '@nuxt/content/types/content.d';
 
 export type SocialLinksType = {
   [key: string]: string
@@ -7,12 +7,12 @@ export type SocialLinksType = {
   twitter: string
 }
 
-export interface BlogPostType {
+export type BlogPostType = {
+  [key: string]: string | string[] | undefined
   title: string
+  thumbnail: string
   date: string,
   excerpt: string
   tags?: string[]
   path: string
 }
-
-export type ContentDocumentWithBlogPost = BlogPostType & IContentDocument
