@@ -12,6 +12,7 @@
     >
       <span class="text-xl
                    md:text-2xl
+                   lg:text-3xl
                   "
       >
         <RoughNotation :is-show="true"
