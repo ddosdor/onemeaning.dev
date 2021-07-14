@@ -43,6 +43,11 @@
       >
         Blog
       </nuxt-link>
+      <nuxt-link class="app-link"
+                 to="/projects"
+      >
+        Projects
+      </nuxt-link>
     </nav>
     <div class="flex space-x-2
                 md:ml-6

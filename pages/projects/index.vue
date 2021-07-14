@@ -1,22 +1,22 @@
 <template>
   <div>
-    Projects
+    Projects<br>
+    {{ projects }}
   </div>
 </template>
 
 <script>
-import { defineComponent, useAsync, useContext } from '@nuxtjs/composition-api';
+import { defineComponent, useAsync } from '@nuxtjs/composition-api';
 
-import { ProjectPostType } from '@/utils/types';
+import { useProjects } from '@/composables';
 
 export default defineComponent({
   setup() {
-    const { $content } = useContext();
-    const projects = useAsync(() => $content('projects')
-      .sortBy('date', 'desc')
-      .limit(4)
-      .fetch<ProjectPostType>());
-    return { projects };
+    const { projects, getProjects } = useProjects();
+    useAsync(() => getProjects());
+    return {
+      projects,
+    };
   },
 });
 </script>
