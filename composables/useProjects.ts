@@ -3,7 +3,7 @@ import {
 } from '@nuxtjs/composition-api';
 import { ProjectPostType, IContentDocument } from '@/utils/types';
 
-interface UseProjectsComposables {
+interface UseProjectsComposable {
   getProjects(): Promise<void>
   projects: ComputedRef<
     (ProjectPostType & IContentDocument) |
@@ -16,18 +16,16 @@ const projects = ref<(ProjectPostType & IContentDocument) |
                         (ProjectPostType & IContentDocument)[] |
                         null>([]);
 
-async function getProjects() {
+const getProjects = async (): Promise<void> => {
   const { $content } = useContext();
 
   projects.value = await $content('projects')
     .only(['title', 'thumbnail', 'excerpt', 'path'])
     .sortBy('date', 'desc')
     .fetch<ProjectPostType>();
-}
+};
 
-export function useProjects(): UseProjectsComposables {
-  return {
-    getProjects,
-    projects: computed(() => projects.value),
-  };
-}
+export const useProjects = (): UseProjectsComposable => ({
+  getProjects,
+  projects: computed(() => projects.value),
+});

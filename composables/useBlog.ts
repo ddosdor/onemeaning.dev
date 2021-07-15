@@ -18,7 +18,7 @@ interface UseBlogComposable {
     null
   >
   isLoadingRecentPosts: ComputedRef<Boolean>
-  isEmpty: ComputedRef<Boolean>
+  isRecentPostsEmpty: ComputedRef<Boolean>
 }
 
 const recentPosts = ref<(BlogPostType & IContentDocument) |
@@ -28,13 +28,17 @@ const posts = ref<(BlogPostType & IContentDocument) |
                   (BlogPostType & IContentDocument)[] |
                   null>([]);
 const isLoadingRecentPosts = ref<Boolean>(false);
-const isEmpty = ref<Boolean>(recentPosts.value?.length !== 0);
+const isRecentPostsEmpty = ref<Boolean>(recentPosts.value?.length !== 0);
 
-export function useBlog(): UseBlogComposable {
+export const useBlog = (): UseBlogComposable => {
   const { $content, query } = useContext();
 
-  async function getRecentPosts(): Promise<void> {
-    if (!isEmpty.value) {
+  /**
+   * Get recent posts list from 'blog' content.\
+   * List will be available in `recentPosts` reactive property
+   */
+  const getRecentPosts = async (): Promise<void> => {
+    if (!isRecentPostsEmpty.value) {
       isLoadingRecentPosts.value = false;
       recentPosts.value = await $content('blog')
         .only(['title', 'thumbnail', 'excerpt', 'path'])
@@ -43,14 +47,13 @@ export function useBlog(): UseBlogComposable {
         .fetch<BlogPostType>();
       isLoadingRecentPosts.value = true;
     }
-  }
+  };
 
   /**
-   * Get posts list
-   *
-   * @param query - Query for getting post list (page)
+   * Get paginated posts list from 'blog' content.\
+   * List will be available in `posts` reactive property
    */
-  async function getPosts(): Promise<void> {
+  const getPosts = async (): Promise<void> => {
     const skip = (POSTS_LIST_LIMIT_PER_PAGE - 1) * Number(query.value.page);
     posts.value = await $content('blog')
       .only(['title', 'date', 'excerpt', 'tags', 'path'])
@@ -58,7 +61,7 @@ export function useBlog(): UseBlogComposable {
       .skip(skip)
       .limit(POSTS_LIST_LIMIT_PER_PAGE)
       .fetch<BlogPostType>();
-  }
+  };
 
   return {
     getRecentPosts,
@@ -66,6 +69,6 @@ export function useBlog(): UseBlogComposable {
     recentPosts: computed(() => recentPosts.value),
     posts: computed(() => posts.value),
     isLoadingRecentPosts: computed(() => isLoadingRecentPosts.value),
-    isEmpty: computed(() => isEmpty.value),
+    isRecentPostsEmpty: computed(() => isRecentPostsEmpty.value),
   };
-}
+};
