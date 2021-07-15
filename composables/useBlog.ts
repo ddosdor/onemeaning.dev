@@ -1,12 +1,12 @@
 import {
   ref, computed, ComputedRef, useContext,
 } from '@nuxtjs/composition-api';
-import { BlogPostType, QueryBlogPostsType, IContentDocument } from '@/utils/types';
+import { BlogPostType, IContentDocument } from '@/utils/types';
 import { POSTS_LIST_LIMIT_PER_PAGE, RECENT_POSTS_LIST_LIMIT } from '@/utils/consts';
 
 interface UseBlogComposable {
   getRecentPosts(): Promise<void>
-  getPosts(query: QueryBlogPostsType): Promise<void>
+  getPosts(): Promise<void>
   recentPosts: ComputedRef<
     (BlogPostType & IContentDocument) |
     (BlogPostType & IContentDocument)[] |
@@ -31,7 +31,7 @@ const isLoadingRecentPosts = ref<Boolean>(false);
 const isEmpty = ref<Boolean>(recentPosts.value?.length !== 0);
 
 export function useBlog(): UseBlogComposable {
-  const { $content } = useContext();
+  const { $content, query } = useContext();
 
   async function getRecentPosts(): Promise<void> {
     if (!isEmpty.value) {
@@ -50,8 +50,8 @@ export function useBlog(): UseBlogComposable {
    *
    * @param query - Query for getting post list (page)
    */
-  async function getPosts(query: QueryBlogPostsType): Promise<void> {
-    const skip = (POSTS_LIST_LIMIT_PER_PAGE - 1) * Number(query.page);
+  async function getPosts(): Promise<void> {
+    const skip = (POSTS_LIST_LIMIT_PER_PAGE - 1) * Number(query.value.page);
     posts.value = await $content('blog')
       .only(['title', 'date', 'excerpt', 'tags', 'path'])
       .sortBy('date', 'desc')
