@@ -1,5 +1,9 @@
 <template>
   <div>
+    <UiPageHeader main
+                  highlight
+                  title="Blog."
+    />
     <PostsPreviewList :posts-list="posts" />
     <UiPagination v-if="!isPostsEmpty" />
   </div>
@@ -11,6 +15,7 @@ import {
 } from '@nuxtjs/composition-api';
 
 import UiPagination from '@/components/Shared/Ui/UiPagination.vue';
+import UiPageHeader from '@/components/Shared/Ui/UiPageHeader.vue';
 import PostsPreviewList from '@/components/Blog/PostsPreviewList.vue';
 
 import { useBlog } from '@/composables';
@@ -18,6 +23,7 @@ import { useBlog } from '@/composables';
 export default defineComponent({
   components: {
     UiPagination,
+    UiPageHeader,
     PostsPreviewList,
   },
   setup() {

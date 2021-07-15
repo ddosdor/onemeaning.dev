@@ -1,9 +1,12 @@
 <template>
   <div class="UiPageHeader">
-    <h1 v-if="main"
-        class="UiPageHeader__title UiPageHeader__title--main"
-    >
-      {{ title }}
+    <h1 v-if="main">
+      <RoughNotation :is-show="highlight"
+                     type="highlight"
+                     :color="color"
+      >
+        <span class="UiPageHeader__title UiPageHeader__title--main">{{ title }}</span>
+      </RoughNotation>
     </h1>
     <h2 v-if="!main">
       <RoughNotation :is-show="highlight"
