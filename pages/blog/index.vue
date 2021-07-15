@@ -4,8 +4,12 @@
                   highlight
                   title="Blog."
     />
-    <PostsPreviewList :posts-list="posts" />
-    <UiPagination v-if="!isPostsEmpty" />
+    <div class="mt-16">
+      <UiLoadingContentWrapper :is-loading="isLoadingPosts">
+        <PostsPreviewList :posts-list="posts" />
+        <UiPagination v-if="!isPostsEmpty" />
+      </UiLoadingContentWrapper>
+    </div>
   </div>
 </template>
 
@@ -16,6 +20,7 @@ import {
 
 import UiPagination from '@/components/Shared/Ui/UiPagination.vue';
 import UiPageHeader from '@/components/Shared/Ui/UiPageHeader.vue';
+import UiLoadingContentWrapper from '@/components/Shared/Ui/UiLoadingContentWrapper.vue';
 import PostsPreviewList from '@/components/Blog/PostsPreviewList.vue';
 
 import { useBlog } from '@/composables';
@@ -24,11 +29,14 @@ export default defineComponent({
   components: {
     UiPagination,
     UiPageHeader,
+    UiLoadingContentWrapper,
     PostsPreviewList,
   },
   setup() {
     const { query } = useContext();
-    const { posts, isPostsEmpty, getPosts } = useBlog();
+    const {
+      posts, isPostsEmpty, isLoadingPosts, getPosts,
+    } = useBlog();
 
     watch(
       () => query.value?.page,
@@ -39,6 +47,7 @@ export default defineComponent({
     return {
       posts,
       isPostsEmpty,
+      isLoadingPosts,
     };
   },
 });

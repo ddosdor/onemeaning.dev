@@ -19,6 +19,7 @@ interface UseBlogComposable {
   >
   isLoadingRecentPosts: ComputedRef<Boolean>
   isRecentPostsEmpty: ComputedRef<Boolean>
+  isLoadingPosts: ComputedRef<Boolean>
   isPostsEmpty: ComputedRef<Boolean>
 }
 
@@ -30,6 +31,7 @@ const posts = ref<(BlogPostType & IContentDocument) |
                   null>([]);
 const isLoadingRecentPosts = ref<Boolean>(false);
 const isRecentPostsEmpty = computed(() => recentPosts.value?.length === 0);
+const isLoadingPosts = ref<Boolean>(false);
 const isPostsEmpty = computed(() => posts.value?.length === 0);
 
 export const useBlog = (): UseBlogComposable => {
@@ -41,13 +43,13 @@ export const useBlog = (): UseBlogComposable => {
    */
   const getRecentPosts = async (): Promise<void> => {
     if (isRecentPostsEmpty.value) {
-      isLoadingRecentPosts.value = false;
+      isLoadingRecentPosts.value = true;
       recentPosts.value = await $content('blog')
         .only(['title', 'thumbnail', 'excerpt', 'path'])
         .sortBy('date', 'desc')
         .limit(RECENT_POSTS_LIST_LIMIT)
         .fetch<BlogPostType>();
-      isLoadingRecentPosts.value = true;
+      isLoadingRecentPosts.value = false;
     }
   };
 
@@ -58,12 +60,14 @@ export const useBlog = (): UseBlogComposable => {
   const getPosts = async (): Promise<void> => {
     const page = Number(query.value.page) === 1 ? 0 : Number(query.value.page);
     const skip = (POSTS_LIST_LIMIT_PER_PAGE - 1) * page;
+    isLoadingPosts.value = true;
     posts.value = await $content('blog')
       .only(['title', 'date', 'excerpt', 'tags', 'path'])
       .sortBy('date', 'desc')
       .skip(skip)
       .limit(POSTS_LIST_LIMIT_PER_PAGE)
       .fetch<BlogPostType>();
+    isLoadingPosts.value = false;
   };
 
   return {
@@ -73,6 +77,7 @@ export const useBlog = (): UseBlogComposable => {
     posts: computed(() => posts.value),
     isLoadingRecentPosts: computed(() => isLoadingRecentPosts.value),
     isRecentPostsEmpty,
+    isLoadingPosts,
     isPostsEmpty,
   };
 };
