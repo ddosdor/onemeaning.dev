@@ -1,6 +1,6 @@
 <template>
-  <a class="RecentPostsListItem w-auto"
-     :href="recentPosts.path"
+  <nuxt-link class="RecentPostsListItem w-auto"
+             :to="recentPosts.path"
   >
     <figure class="w-full">
       <img class="object-fit max-w-full h-auto rounded-lg"
@@ -13,7 +13,7 @@
     <p class="mt-2 line-clamp-3">
       <nuxt-content :document="{ body: recentPosts.excerpt }" />
     </p>
-  </a>
+  </nuxt-link>
 </template>
 
 <script lang="ts">
