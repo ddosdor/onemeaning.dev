@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
-import { useRecentBlogPosts } from '@/composables';
+import { useBlog } from '@/composables';
 import RecentPostsListItem from './RecentPostsListItem.vue';
 
 export default defineComponent({
@@ -21,15 +21,10 @@ export default defineComponent({
     RecentPostsListItem,
   },
   setup() {
-    const { recentPosts, getRecentPosts } = useRecentBlogPosts();
+    const { recentPosts, getRecentPosts } = useBlog();
     getRecentPosts();
 
     return { recentPosts };
   },
 });
 </script>
-
-<style lang="sass" scoped>
-.RecentPostsList
-  // component style
-</style>

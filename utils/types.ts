@@ -7,6 +7,11 @@ export type SocialLinksType = {
   twitter: string
 }
 
+export type QueryBlogPostsType = {
+  [key: string]: string
+  page: string
+}
+
 export type BlogPostType = {
   [key: string]: string | string[] | undefined
   title: string
