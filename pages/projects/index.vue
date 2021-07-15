@@ -6,14 +6,14 @@
 </template>
 
 <script>
-import { defineComponent, useAsync } from '@nuxtjs/composition-api';
+import { defineComponent } from '@nuxtjs/composition-api';
 
 import { useProjects } from '@/composables';
 
 export default defineComponent({
   setup() {
     const { projects, getProjects } = useProjects();
-    useAsync(() => getProjects());
+    getProjects();
     return {
       projects,
     };

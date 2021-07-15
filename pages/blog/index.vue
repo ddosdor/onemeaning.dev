@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import {
-  defineComponent, useAsync, useContext, watch,
+  defineComponent, useContext, watch,
 } from '@nuxtjs/composition-api';
 import PostsPreviewList from '@/components/Blog/PostsPreviewList.vue';
 import PostsPreviewListPagination from '@/components/Blog/PostsPreviewListPagination.vue';
@@ -24,7 +24,7 @@ export default defineComponent({
 
     watch(
       () => query.value?.page,
-      () => useAsync(() => getPosts()),
+      () => getPosts(),
       { immediate: true },
     );
 
