@@ -43,6 +43,7 @@ export default defineComponent({
     &--main
       @apply text-xl
       @apply md:text-3xl
+      @apply lg:text-4xl
     @apply font-extrabold text-center text-lg mb-4
     @apply md:text-left md:text-2xl md:mb-6
 </style>

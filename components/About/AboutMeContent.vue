@@ -1,17 +1,17 @@
 <template>
   <div class="AboutMeContent flex flex-col items-center mt-6
               md:items-start
-              lg:flex-row-reverse
+              lg:flex-row-reverse lg: mt-10
              "
   >
     <div class="flex-shrink-0
-                lg:mt-0 lg:ml-auto lg:pl-10
+                lg:mt-0 lg:ml-auto lg:pl-20
                "
     >
       <figure>
         <img class="inline object-cover w-20 h-20 mb-4 ring-1 ring-red-300 rounded-full
                     md:w-28 md:h-28
-                    lg:w-56 lg:h-56 lg:relative lg:bottom-10
+                    lg:w-72 lg:h-72 lg:relative lg:bottom-10
                    "
              src="~/assets/images/me.png"
         >
