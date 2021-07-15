@@ -14,3 +14,6 @@ export const COLORS_FOR_HIGHLIGHTS = [
   '#EDE9FE',
   '#FCE7F3',
 ];
+
+export const POSTS_LIST_LIMIT_PER_PAGE = 2;
+export const RECENT_POSTS_LIST_LIMIT = 4;

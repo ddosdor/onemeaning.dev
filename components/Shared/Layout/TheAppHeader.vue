@@ -12,6 +12,7 @@
     >
       <span class="text-xl
                    md:text-2xl
+                   lg:text-3xl
                   "
       >
         <RoughNotation :is-show="true"
@@ -41,6 +42,11 @@
                  to="/blog?page=1"
       >
         Blog
+      </nuxt-link>
+      <nuxt-link class="app-link"
+                 to="/projects"
+      >
+        Projects
       </nuxt-link>
     </nav>
     <div class="flex space-x-2

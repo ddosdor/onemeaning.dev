@@ -3,45 +3,23 @@
     <button @click="previousPage">
       Previous page
     </button>
-    <button @click="goToNextPage">
+    <button @click="nextPage">
       Next page
     </button>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, useRouter, useRoute } from '@nuxtjs/composition-api';
+import { defineComponent } from '@nuxtjs/composition-api';
+import { usePagination } from '@/composables';
 
 export default defineComponent({
   name: 'PostsPreviewListPagination',
   setup() {
-    const router = useRouter();
-    const route = useRoute();
-
-    function goToNextPage() {
-      const { page } = route.value.query;
-      const newPage = page || 1;
-      router.push({
-        query: {
-          ...route.value.query,
-          page: String(Number(newPage) + 1),
-        },
-      });
-    }
-
-    function previousPage() {
-      const { page } = route.value.query;
-      const newPage = page || 1;
-      router.push({
-        query: {
-          ...route.value.query,
-          page: String(Number(newPage) - 1),
-        },
-      });
-    }
+    const { nextPage, previousPage } = usePagination();
 
     return {
-      goToNextPage,
+      nextPage,
       previousPage,
     };
   },
