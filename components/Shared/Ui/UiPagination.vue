@@ -1,5 +1,5 @@
 <template>
-  <div class="PostsPreviewListPagination">
+  <div class="UiPagination">
     <button @click="previousPage">
       Previous page
     </button>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <PostsPreviewList :posts-list="posts" />
-    <PostsPreviewListPagination />
+    <UiPagination v-if="!isPostsEmpty" />
   </div>
 </template>
 
@@ -9,18 +9,20 @@
 import {
   defineComponent, useContext, watch,
 } from '@nuxtjs/composition-api';
+
+import UiPagination from '@/components/Shared/Ui/UiPagination.vue';
 import PostsPreviewList from '@/components/Blog/PostsPreviewList.vue';
-import PostsPreviewListPagination from '@/components/Blog/PostsPreviewListPagination.vue';
+
 import { useBlog } from '@/composables';
 
 export default defineComponent({
   components: {
+    UiPagination,
     PostsPreviewList,
-    PostsPreviewListPagination,
   },
   setup() {
     const { query } = useContext();
-    const { posts, getPosts } = useBlog();
+    const { posts, isPostsEmpty, getPosts } = useBlog();
 
     watch(
       () => query.value?.page,
@@ -30,6 +32,7 @@ export default defineComponent({
 
     return {
       posts,
+      isPostsEmpty,
     };
   },
 });

@@ -1,4 +1,4 @@
-import { useRouter, useRoute } from '@nuxtjs/composition-api';
+import { useRouter, watchEffect, useRoute } from '@nuxtjs/composition-api';
 
 interface UsePaginationComposable {
   nextPage(): void
@@ -9,26 +9,40 @@ export const usePagination = (): UsePaginationComposable => {
   const router = useRouter();
   const route = useRoute();
 
-  const nextPage = (): void => {
-    const { page } = route.value.query;
-    const newPage = page || 1;
+  const updateUrlQuery = (newPage: string) => {
     router.push({
       query: {
         ...route.value.query,
-        page: String(Number(newPage) + 1),
+        page: newPage,
       },
     });
   };
 
+  watchEffect(
+    () => {
+      if (Number(route.value.query?.page) <= 0) {
+        router.push({
+          query: {
+            ...route.value.query,
+            page: '1',
+          },
+        });
+      }
+    },
+  );
+
+  const nextPage = (): void => {
+    const { page } = route.value.query;
+    const newPage = String(Number(page) + 1);
+    updateUrlQuery(newPage);
+  };
+
   const previousPage = (): void => {
     const { page } = route.value.query;
-    const newPage = page || 1;
-    router.push({
-      query: {
-        ...route.value.query,
-        page: String(Number(newPage) - 1),
-      },
-    });
+    if (Number(page) > 1) {
+      const newPage = String(Number(page) - 1);
+      updateUrlQuery(newPage);
+    }
   };
 
   return {
