@@ -1,12 +1,19 @@
 <template>
-  <div class="RecentPostsListItem w-auto">
-    <figure>
-      <img class="object-contain md:object-scale-down"
+  <a class="RecentPostsListItem w-auto"
+     :href="recentPosts.path"
+  >
+    <figure class="w-full">
+      <img class="object-fit max-w-full h-auto rounded-lg"
            :src="recentPosts.thumbnail"
       >
     </figure>
-    <div>{{ recentPosts.title }}</div>
-  </div>
+    <h2 class="RecentPostsListItem__title text-lg font-semibold mt-6 line-clamp-1">
+      {{ recentPosts.title }}
+    </h2>
+    <p class="mt-2 line-clamp-3">
+      <nuxt-content :document="{ body: recentPosts.excerpt }" />
+    </p>
+  </a>
 </template>
 
 <script lang="ts">
@@ -27,5 +34,11 @@ export default defineComponent({
 
 <style lang="sass" scoped>
 .RecentPostsListItem
-  // component style
+  cursor: pointer
+
+  &:hover
+    .RecentPostsListItem__title
+      color: $link-color
+
+  @apply transition duration-200
 </style>

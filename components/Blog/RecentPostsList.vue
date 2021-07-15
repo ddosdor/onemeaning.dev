@@ -1,6 +1,6 @@
 <template>
-  <div class="RecentPostsList mt-6 grid grid-rows-4 grid-flow-col gap-4
-              md:grid-rows-2
+  <div class="RecentPostsList mt-6 grid grid-cols-0 grid-flow-row gap-12
+              md:grid-cols-2
              "
   >
     <RecentPostsListItem v-for="(recentPost, index) in recentPosts"

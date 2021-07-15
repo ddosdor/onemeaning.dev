@@ -13,9 +13,7 @@
       <RecentPostsList />
     </UiPageSection>
     <UiPageSection>
-      <UiPageHeader highlight
-                    title="Recent Projects"
-      />
+      <UiPageHeader title="Recent Projects" />
       <RecentProjectsList />
     </UiPageSection>
   </div>
