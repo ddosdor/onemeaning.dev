@@ -16,7 +16,9 @@
     </UiPageSection>
     <UiPageSection>
       <UiPageHeader title="Recent Projects" />
-      <RecentProjectsList />
+      <UiLoadingContentWrapper :is-loading="isLoadingRecentProjects">
+        <RecentProjectsList />
+      </UiLoadingContentWrapper>
     </UiPageSection>
   </div>
 </template>
@@ -30,7 +32,7 @@ import AboutMeContent from '@/components/About/AboutMeContent.vue';
 import RecentPostsList from '@/components/Blog/RecentPostsList.vue';
 import RecentProjectsList from '@/components/Projects/RecentProjectsList.vue';
 
-import { useBlog } from '@/composables';
+import { useBlog, useProjects } from '@/composables';
 
 export default defineComponent({
   components: {
@@ -43,7 +45,8 @@ export default defineComponent({
   },
   setup() {
     const { isLoadingRecentPosts } = useBlog();
-    return { isLoadingRecentPosts };
+    const { isLoadingRecentProjects } = useProjects();
+    return { isLoadingRecentPosts, isLoadingRecentProjects };
   },
 });
 </script>
