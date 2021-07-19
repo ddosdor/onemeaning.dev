@@ -17,18 +17,23 @@ export type BlogPostType = {
   path: string
 }
 
+export type NpmPackageParams = {
+  link?: string
+  package?: string
+}
+
 export type GithubRepositoryParams = {
-  link: string
+  link?: string
   username?: string
   reponame?: string
 }
 
 export type ProjectPostType = {
-  [key: string]: string | number | GithubRepositoryParams
+  [key: string]: string | number | undefined | GithubRepositoryParams | NpmPackageParams
   title: string
   date: string
   priority: number
-  npm: string
+  npm?: NpmPackageParams
   github: GithubRepositoryParams
   description: string
 }

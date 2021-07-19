@@ -20,7 +20,7 @@ export default defineComponent({
   },
   setup(props) {
     const { stars } = useGithubInfo({
-      usename: props.username,
+      username: props.username,
       reponame: props.reponame,
     });
 

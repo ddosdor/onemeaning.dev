@@ -1,8 +1,10 @@
 ---
 title: vue-sh-cli
 date: 2020-05-20T20:47:18
-npm: some_npm_link
 priority: 1
+npm:
+  link: https://www.npmjs.com/package/@ddosdor/vue-sh-cli
+  package: '@ddosdor/vue-sh-cli'
 github:
   link: https://github.com/ddosdor/vue-sh-cli
   username: ddosdor

@@ -4,3 +4,4 @@ export * from './usePagination';
 export * from './useBlog';
 export * from './useProjects';
 export * from './useGithubInfo';
+export * from './useNpmWeeklyDownloads';

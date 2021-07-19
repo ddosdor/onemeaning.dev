@@ -20,3 +20,4 @@ export const RECENT_POSTS_LIST_LIMIT = 4;
 export const RECENT_PROJECTS_LIST_LIMIT = 4;
 
 export const GITHUB_API = 'https://api.github.com/repos';
+export const NPM_API = 'https://api.npmjs.org';
