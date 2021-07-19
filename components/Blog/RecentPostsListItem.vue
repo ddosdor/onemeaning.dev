@@ -1,17 +1,17 @@
 <template>
   <nuxt-link class="RecentPostsListItem w-auto"
-             :to="recentPosts.path"
+             :to="recentPost.path"
   >
     <figure class="w-full">
       <img class="object-fit max-w-full h-auto rounded-lg"
-           :src="recentPosts.thumbnail"
+           :src="recentPost.thumbnail"
       >
     </figure>
     <h2 class="RecentPostsListItem__title text-lg font-semibold mt-6 line-clamp-1">
-      {{ recentPosts.title }}
+      {{ recentPost.title }}
     </h2>
     <p class="mt-2 line-clamp-3">
-      <nuxt-content :document="{ body: recentPosts.excerpt }" />
+      <nuxt-content :document="{ body: recentPost.excerpt }" />
     </p>
   </nuxt-link>
 </template>
@@ -23,7 +23,7 @@ import { BlogPostType } from '@/utils/types';
 export default defineComponent({
   name: 'RecentPostsListItem',
   props: {
-    recentPosts: {
+    recentPost: {
       type: Object as PropType<BlogPostType>,
       default: {} as BlogPostType,
       required: true,

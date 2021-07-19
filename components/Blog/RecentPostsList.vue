@@ -5,7 +5,7 @@
   >
     <RecentPostsListItem v-for="(recentPost, index) in recentPosts"
                          :key="`recent-post-${index}`"
-                         :recent-posts="recentPost"
+                         :recent-post="recentPost"
     />
   </div>
 </template>
