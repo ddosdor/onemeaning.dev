@@ -12,7 +12,7 @@
           </a>
         </li>
         <li>
-          <a :href="recentProject.github"
+          <a :href="recentProject.github.link"
              target="__blank"
           >
             <UiSocialLink npm
@@ -22,7 +22,9 @@
         </li>
       </ul>
       <div class="space-x-2 text-xs ml-auto">
-        <span>Stars: <label class="font-bold">2</label></span>
+        <GithubStars :username="recentProject.github.username"
+                     :reponame="recentProject.github.reponame"
+        />
         <span>Weekly downloads: <label class="font-bold">20</label></span>
       </div>
     </div>
@@ -43,11 +45,13 @@
 import { defineComponent, PropType } from '@nuxtjs/composition-api';
 import { ProjectPostType } from '@/utils/types';
 import UiSocialLink from '@/components/Shared/Ui/UiSocialIcon.vue';
+import GithubStars from '@/components/Shared/GithubStars.vue';
 
 export default defineComponent({
   name: 'RecentProjectsListItem',
   components: {
     UiSocialLink,
+    GithubStars,
   },
   props: {
     recentProject: {

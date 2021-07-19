@@ -21,6 +21,7 @@
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/composition-api": "^0.24.6",
     "@tailwindcss/line-clamp": "^0.2.1",
+    "axios": "^0.21.1",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7"
   },

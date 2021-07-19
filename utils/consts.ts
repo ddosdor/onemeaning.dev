@@ -18,3 +18,5 @@ export const COLORS_FOR_HIGHLIGHTS = [
 export const POSTS_LIST_LIMIT_PER_PAGE = 2;
 export const RECENT_POSTS_LIST_LIMIT = 4;
 export const RECENT_PROJECTS_LIST_LIMIT = 4;
+
+export const GITHUB_API = 'https://api.github.com/repos';

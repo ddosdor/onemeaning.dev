@@ -3,3 +3,4 @@ export * from './useSocialLinks';
 export * from './usePagination';
 export * from './useBlog';
 export * from './useProjects';
+export * from './useGithubInfo';
