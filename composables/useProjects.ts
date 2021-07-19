@@ -39,7 +39,7 @@ export const useProjects = (): UseProjectsComposable => {
    */
   const getRecentProjects = async (): Promise<void> => {
     if (isRecentProjectsEmpty.value) {
-      isLoadingRecentProjects.value = true;
+      isLoadingRecentProjects.value = false;
       recentProjects.value = await $content('projects')
         .only(['title', 'npm', 'github', 'description'])
         .sortBy('priority', 'asc')
