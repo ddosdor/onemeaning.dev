@@ -62,7 +62,7 @@ export const useBlog = (): UseBlogComposable => {
     const skip = (POSTS_LIST_LIMIT_PER_PAGE - 1) * page;
     isLoadingPosts.value = true;
     posts.value = await $content('blog')
-      .only(['title', 'date', 'excerpt', 'tags', 'path'])
+      .only(['title', 'date', 'thumbnail', 'excerpt', 'tags', 'path', 'author'])
       .sortBy('date', 'desc')
       .skip(skip)
       .limit(POSTS_LIST_LIMIT_PER_PAGE)

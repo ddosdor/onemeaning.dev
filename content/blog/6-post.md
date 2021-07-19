@@ -2,6 +2,9 @@
 title: How I built my blog with Nuxt.js
 date: 2020-05-25T20:47:18
 thumbnail: images/blog/thumbnails/how_i_build_my_blog.png
+author:
+  avatar:
+  name: Sebastian
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere posuere tellus, non porttitor turpis interdum vitae. Phasellus leo odio, ornare at risus sed, ornare rutrum mi. Suspendisse tempor, odio eu facilisis dapibus, orci orci vulputate purus, eget porta tortor nisi eget sapien. Donec vehicula vitae ex non malesuada. Sed porttitor pulvinar dui, in fermentum ex bibendum commodo. Fusce sed mollis purus. Pellentesque vehicula enim nec placerat ultrices.

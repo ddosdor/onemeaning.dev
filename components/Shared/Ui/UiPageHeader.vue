@@ -44,7 +44,7 @@ export default defineComponent({
 .UiPageHeader
   &__title
     &--main
-      @apply text-xl
+      @apply text-2xl
       @apply md:text-3xl
       @apply lg:text-4xl
     @apply font-extrabold text-center text-lg mb-4

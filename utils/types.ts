@@ -7,14 +7,20 @@ export type SocialLinksType = {
   twitter: string
 }
 
+export type PostAuthor = {
+  avatar: string
+  name: string
+}
+
 export type BlogPostType = {
-  [key: string]: string | string[] | undefined
+  [key: string]: string | string[] | undefined | PostAuthor
   title: string
   thumbnail: string
   date: string,
   excerpt: string
   tags?: string[]
   path: string
+  author: PostAuthor
 }
 
 export type NpmPackageParams = {

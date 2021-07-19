@@ -4,7 +4,7 @@
                   highlight
                   title="Blog."
     />
-    <div class="mt-16">
+    <div class="mt-10">
       <UiLoadingContentWrapper :is-loading="isLoadingPosts">
         <PostsPreviewList :posts-list="posts" />
         <UiPagination v-if="!isPostsEmpty" />
