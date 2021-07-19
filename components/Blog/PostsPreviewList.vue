@@ -4,9 +4,11 @@
       <li
         v-for="(post, index) in postsList"
         :key="`blog-post-${index}`"
-        class="mb-12"
+        class="mb-20"
       >
-        <PostsPreviewListItem :post="post" />
+        <PostsPreviewListItem :post="post"
+                              :index="index"
+        />
       </li>
     </ul>
   </div>

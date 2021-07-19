@@ -34,11 +34,12 @@ export default defineComponent({
 
 <style lang="sass" scoped>
 .RecentPostsListItem
-  cursor: pointer
-
   &:hover
     .RecentPostsListItem__title
       color: $link-color
 
-  @apply transition duration-200
+  .RecentPostsListItem__title
+    @apply transition duration-200 ease-in-out
+
+  @apply cursor-pointer
 </style>

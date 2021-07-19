@@ -2,6 +2,9 @@
 title: Fusce sed mollis purus. Pellentesque vehicula enim nec placerat ultrices.
 date: 2020-05-24T20:47:18
 thumbnail: images/blog/thumbnails/example_thumbnail.png
+author:
+  avatar: images/blog/avatars/me_avatar.png
+  name: Sebastian
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere posuere tellus, non porttitor turpis interdum vitae. Phasellus leo odio, ornare at risus sed, ornare rutrum mi. Suspendisse tempor, odio eu facilisis dapibus, orci orci vulputate purus, eget porta tortor nisi eget sapien. Donec vehicula vitae ex non malesuada. Sed porttitor pulvinar dui, in fermentum ex bibendum commodo. Fusce sed mollis purus. Pellentesque vehicula enim nec placerat ultrices.

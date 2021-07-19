@@ -3,7 +3,7 @@ title: How I built my blog with Nuxt.js
 date: 2020-05-25T20:47:18
 thumbnail: images/blog/thumbnails/how_i_build_my_blog.png
 author:
-  avatar:
+  avatar: images/blog/avatars/me_avatar.png
   name: Sebastian
 ---
 

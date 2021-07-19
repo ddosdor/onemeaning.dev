@@ -1,29 +1,40 @@
 <template>
-  <article class="flex flex-col
-                  lg:flex-row lg:space-x-6
-                 "
+  <nuxt-link class="PostPreviewListItem flex flex-col"
+             :class="{
+               'lg:flex-row': position === 'even',
+               'lg:flex-row-reverse': position === 'odd',
+             }"
+             :to="post.path"
   >
-    <figure class="w-full
+    <figure class="PostPreviewListItem__thumbnail w-full
                    lg:w-2/5 lg:flex-none
                   "
+            :class="{
+              'lg:mr-8': position === 'even',
+              'lg:ml-8': position === 'odd',
+            }"
     >
       <img class="object-fit max-w-full h-auto rounded-lg"
            :src="post.thumbnail"
       >
     </figure>
-    <div class="mt-2">
-      <div class="flex items-center">
-        <div class="text-sm">
-          Author
-        </div>
-        <time class="text-sm text-gray-500 ml-auto">{{ formatedPublishPostDate }}</time>
+    <div class="mt-2 flex flex-col px-2
+                lg:px-0
+               "
+    >
+      <div class="flex items-center justify-between">
+        <PostAuthor v-if="post.author"
+                    :avatar="post.author.avatar"
+                    :name="post.author.name"
+        />
+        <time class="text-sm text-gray-500">{{ formatedPublishPostDate }}</time>
       </div>
-      <h2 class="mt-4
-                 lg:mt-2
+      <h2 class="mt-4 flex
+                 lg:mt-4
                 "
       >
         <a :href="post.path"
-           class="text-lg font-bold app-links
+           class="PostPreviewListItem__title text-lg font-bold w-full
                   md:text-xl
                  "
         >{{ post.title }}</a>
@@ -33,13 +44,8 @@
       >
         <nuxt-content :document="{ body: post.excerpt }" />
       </p>
-      <nuxt-link class=""
-                 :to="post.path"
-      >
-        Read More >
-      </nuxt-link>
     </div>
-  </article>
+  </nuxt-link>
 </template>
 
 <script lang="ts">
@@ -47,16 +53,26 @@ import { defineComponent, computed, PropType } from '@nuxtjs/composition-api';
 import { DateTimeFormatOptions } from '@/index.d';
 import { BlogPostType } from '@/utils/types';
 
+import PostAuthor from './PostAuthor.vue';
+
 export default defineComponent({
   name: 'PostPreview',
+  components: {
+    PostAuthor,
+  },
   props: {
     post: {
       type: Object as PropType<BlogPostType>,
       required: true,
     },
+    index: {
+      type: Number,
+      default: 0,
+    },
   },
   setup(props) {
     const { post } = props;
+    const position = computed<String>(() => ((props.index % 2 === 0) ? 'even' : 'odd'));
 
     const formatedPublishPostDate = computed(() => {
       const dateFormat = new Date(post.date);
@@ -70,13 +86,26 @@ export default defineComponent({
     });
 
     return {
-      formatedPublishPostDate,
+      formatedPublishPostDate, position,
     };
   },
 });
 </script>
 
 <style lang="sass" scoped>
-.PostPreview
-  // component style
+.PostPreviewListItem
+  &:hover
+    .PostPreviewListItem__title
+      color: $link-color
+
+    .PostPreviewListItem__thumbnail
+      @apply transform scale-105
+
+  .PostPreviewListItem__title
+    @apply transition duration-200 ease-in-out
+
+  .PostPreviewListItem__thumbnail
+    @apply transition duration-200 ease-in-out
+
+  @apply cursor-pointer
 </style>

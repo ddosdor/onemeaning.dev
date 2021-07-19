@@ -1,7 +1,7 @@
 <template>
   <div class="AboutMeContent flex flex-col items-center mt-6
               md:items-start
-              lg:flex-row-reverse lg: mt-10
+              lg:flex-row-reverse lg:mt-10
              "
   >
     <div class="flex-shrink-0
