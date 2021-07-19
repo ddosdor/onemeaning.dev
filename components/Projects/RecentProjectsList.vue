@@ -1,21 +1,30 @@
 <template>
-  <div class="RecentProjectsList mt-6">
-    Recent Projects List
+  <div class="RecentProjectsList mt-6 grid grid-cols-0 grid-flow-row gap-12
+              md:grid-cols-2
+              "
+  >
+    <RecentProjectsListItem v-for="(recentProject, index) in recentProjects"
+                            :key="`recent-project-${index}`"
+                            :recent-project="recentProject"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
+import { useProjects } from '@/composables';
+import RecentProjectsListItem from './RecentProjectsListItem.vue';
 
 export default defineComponent({
   name: 'RecentProjectsList',
+  components: {
+    RecentProjectsListItem,
+  },
   setup() {
-    // component setup
+    const { recentProjects, getRecentProjects } = useProjects();
+    getRecentProjects();
+
+    return { recentProjects };
   },
 });
 </script>
-
-<style lang="sass" scoped>
-.RecentProjectsList
-  // component style
-</style>

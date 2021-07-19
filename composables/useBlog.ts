@@ -77,7 +77,7 @@ export const useBlog = (): UseBlogComposable => {
     posts: computed(() => posts.value),
     isLoadingRecentPosts: computed(() => isLoadingRecentPosts.value),
     isRecentPostsEmpty,
-    isLoadingPosts,
+    isLoadingPosts: computed(() => isLoadingPosts.value),
     isPostsEmpty,
   };
 };

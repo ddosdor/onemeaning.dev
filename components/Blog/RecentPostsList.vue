@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, useAsync } from '@nuxtjs/composition-api';
+import { defineComponent } from '@nuxtjs/composition-api';
 import { useBlog } from '@/composables';
 import RecentPostsListItem from './RecentPostsListItem.vue';
 
