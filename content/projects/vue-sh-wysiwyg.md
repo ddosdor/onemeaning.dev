@@ -1,9 +1,10 @@
 ---
 title: vue-sh-wysiwyg
 date: 2020-05-20T20:47:18
+priority: 2
 npm: some_npm_link_to_wysiwyg
 github: some_github_link_to_wysiwyg
-description: vue-sh-wysiwyg Lorem ipsum dolor sit amet
+description: Simple and very basic Wysiwyg editor for Vue.js.
 ---
 
 # vue-sh-cli

@@ -9,6 +9,9 @@
     <TwitterIcon v-if="twitter"
                  :class="{ 'as-link': asLink }"
     />
+    <NpmIcon v-if="npm"
+             :class="{ 'as-link': asLink }"
+    />
   </span>
 </template>
 
@@ -18,6 +21,7 @@ import { defineComponent } from '@nuxtjs/composition-api';
 import GithubIcon from './icons/github.svg?inline';
 import LinkedinIcon from './icons/linkedin.svg?inline';
 import TwitterIcon from './icons/twitter.svg?inline';
+import NpmIcon from './icons/npm.svg?inline';
 
 export default defineComponent({
   name: 'UiSocialIcon',
@@ -25,15 +29,14 @@ export default defineComponent({
     GithubIcon,
     LinkedinIcon,
     TwitterIcon,
+    NpmIcon,
   },
   props: {
     github: Boolean,
     twitter: Boolean,
     linkedin: Boolean,
+    npm: Boolean,
     asLink: Boolean,
-  },
-  setup() {
-
   },
 });
 </script>

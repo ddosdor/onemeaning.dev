@@ -41,8 +41,8 @@ export const useProjects = (): UseProjectsComposable => {
     if (isRecentProjectsEmpty.value) {
       isLoadingRecentProjects.value = true;
       recentProjects.value = await $content('projects')
-        .only([])
-        .sortBy('prority', 'desc')
+        .only(['title', 'npm', 'github', 'description'])
+        .sortBy('prority', 'asc')
         .limit(RECENT_PROJECTS_LIST_LIMIT)
         .fetch<ProjectPostType>();
       isLoadingRecentProjects.value = true;

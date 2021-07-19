@@ -18,9 +18,10 @@ export type BlogPostType = {
 }
 
 export type ProjectPostType = {
-  [key: string]: string
+  [key: string]: string | number
   title: string
   date: string
+  priority: number
   npm: string
   github: string
   description: string
