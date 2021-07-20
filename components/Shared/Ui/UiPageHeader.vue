@@ -21,7 +21,8 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
-import { useRandomHighlightColors } from '@/composables';
+
+import { useRandomHighlightColors } from '@/composables/useRandomHighlightColors';
 
 export default defineComponent({
   name: 'UiPageHeader',

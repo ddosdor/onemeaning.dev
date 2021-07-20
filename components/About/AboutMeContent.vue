@@ -59,8 +59,3 @@ export default defineComponent({
   name: 'AboutMeContent',
 });
 </script>
-
-<style lang="sass" scoped>
-.AboutMeContent
-  // component style
-</style>

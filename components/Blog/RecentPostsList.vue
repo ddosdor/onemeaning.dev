@@ -12,7 +12,9 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
-import { useBlog } from '@/composables';
+
+import { useBlog } from '@/composables/useBlog';
+
 import RecentPostsListItem from './RecentPostsListItem.vue';
 
 export default defineComponent({

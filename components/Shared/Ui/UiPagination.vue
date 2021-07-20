@@ -11,7 +11,8 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
-import { usePagination } from '@/composables';
+
+import { usePagination } from '@/composables/usePagination';
 
 export default defineComponent({
   name: 'PostsPreviewListPagination',

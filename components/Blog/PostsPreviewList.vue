@@ -6,8 +6,8 @@
         :key="`blog-post-${index}`"
         class="mb-20"
       >
-        <PostsPreviewListItem :post="post"
-                              :index="index"
+        <BlogPostsPreviewListItem :post="post"
+                                  :index="index"
         />
       </li>
     </ul>
@@ -18,15 +18,11 @@
 import {
   defineComponent, PropType,
 } from '@nuxtjs/composition-api';
-import PostsPreviewListItem from '@/components/Blog/PostsPreviewListItem.vue';
 
 import { BlogPostType } from '@/utils/types';
 
 export default defineComponent({
   name: 'PostsList',
-  components: {
-    PostsPreviewListItem,
-  },
   props: {
     postsList: {
       type: [] as PropType<BlogPostType[]>,

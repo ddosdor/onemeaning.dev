@@ -39,7 +39,8 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
-import { useSocialLink } from '@/composables';
+
+import { useSocialLink } from '@/composables/useSocialLinks';
 
 export default defineComponent({
   name: 'PageFooter',

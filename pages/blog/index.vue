@@ -1,14 +1,16 @@
 <template>
   <div>
-    <UiPageHeader main
-                  highlight
-                  title="Blog."
+    <SharedUiPageHeader main
+                        highlight
+                        title="Blog."
     />
     <div class="mt-10">
-      <UiLoadingContentWrapper :is-loading="isLoadingPosts">
-        <PostsPreviewList :posts-list="posts" />
-        <UiPagination v-if="!isPostsEmpty" />
-      </UiLoadingContentWrapper>
+      <SharedUiLoadingContentWrapper :is-loading="isLoadingPosts">
+        <LazyBlogPostsPreviewList v-if="!isPostsEmpty"
+                                  :posts-list="posts"
+        />
+        <LazySharedUiPagination v-if="!isPostsEmpty" />
+      </SharedUiLoadingContentWrapper>
     </div>
   </div>
 </template>
@@ -18,20 +20,9 @@ import {
   defineComponent, useContext, watch,
 } from '@nuxtjs/composition-api';
 
-import UiPagination from '@/components/Shared/Ui/UiPagination.vue';
-import UiPageHeader from '@/components/Shared/Ui/UiPageHeader.vue';
-import UiLoadingContentWrapper from '@/components/Shared/Ui/UiLoadingContentWrapper.vue';
-import PostsPreviewList from '@/components/Blog/PostsPreviewList.vue';
-
-import { useBlog } from '@/composables';
+import { useBlog } from '@/composables/useBlog';
 
 export default defineComponent({
-  components: {
-    UiPagination,
-    UiPageHeader,
-    UiLoadingContentWrapper,
-    PostsPreviewList,
-  },
   setup() {
     const { query } = useContext();
     const {

@@ -56,22 +56,22 @@
       <a :href="twitter"
          target="__blank"
       >
-        <UiSocialIcon twitter
-                      as-link
+        <SharedUiSocialIcon twitter
+                            as-link
         />
       </a>
       <a :href="linkedin"
          target="__blank"
       >
-        <UiSocialIcon linkedin
-                      as-link
+        <SharedUiSocialIcon linkedin
+                            as-link
         />
       </a>
       <a :href="github"
          target="__blank"
       >
-        <UiSocialIcon github
-                      as-link
+        <SharedUiSocialIcon github
+                            as-link
         />
       </a>
     </div>
@@ -80,14 +80,11 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
-import { useSocialLink } from '@/composables';
-import UiSocialIcon from '@/components/Shared/Ui/UiSocialIcon.vue';
+
+import { useSocialLink } from '@/composables/useSocialLinks';
 
 export default defineComponent({
   name: 'TheAppHeader',
-  components: {
-    UiSocialIcon,
-  },
   setup() {
     const { github, linkedin, twitter } = useSocialLink();
     return {
@@ -98,8 +95,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="sass" scoped>
-.PageHeader
-  // component style
-</style>
