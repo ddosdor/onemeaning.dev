@@ -26,7 +26,8 @@
         <SharedNpmWeeklyDownloads :package="recentProject.npm.package" />
       </div>
     </div>
-    <nuxt-link class="RecentProjectsListItem pt-4"
+    <nuxt-link v-if="recentProject"
+               class="RecentProjectsListItem pt-4 min-w-full min-h-full"
                :to="recentProject.path"
     >
       <h2 class="RecentProjectsListItem__title text-xl font-semibold line-clamp-1">
