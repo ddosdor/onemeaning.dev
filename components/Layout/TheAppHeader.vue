@@ -10,6 +10,7 @@
               md:mb-0
              "
        href="/"
+       name="onemeaning.dev"
     >
       <span class="text-2xl
                    md:text-3xl
@@ -56,16 +57,19 @@
     >
       <a :href="twitter"
          target="__blank"
+         name="Go to Twitter account"
       >
         <SharedUiSocialIcon twitter />
       </a>
       <a :href="linkedin"
          target="__blank"
+         name="Go to LinkedIn account"
       >
         <SharedUiSocialIcon linkedin />
       </a>
       <a :href="github"
          target="__blank"
+         name="Go to Github account"
       >
         <SharedUiSocialIcon github />
       </a>
