@@ -6,18 +6,14 @@
           <a :href="recentProject.github"
              target="__blank"
           >
-            <SharedUiSocialIcon github
-                                as-link
-            />
+            <SharedUiSocialIcon github />
           </a>
         </li>
         <li>
           <a :href="recentProject.npm.link"
              target="__blank"
           >
-            <SharedUiSocialIcon npm
-                                as-link
-            />
+            <SharedUiSocialIcon npm />
           </a>
         </li>
       </ul>

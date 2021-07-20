@@ -2,11 +2,13 @@
   <nuxt-link class="RecentPostsListItem w-auto"
              :to="recentPost.path"
   >
-    <figure class="w-full">
-      <img class="object-fit max-w-full h-auto rounded-lg"
-           :src="recentPost.thumbnail"
-      >
-    </figure>
+    <SharedUiImage :src="recentPost.thumbnail"
+                   custom-class="object-fit max-w-full h-auto rounded-lg"
+                   :title="recentPost.title"
+                   :alt="recentPost.title"
+                   width="675px"
+                   height="380px"
+    />
     <h2 class="RecentPostsListItem__title text-lg font-semibold mt-6 line-clamp-1">
       {{ recentPost.title }}
     </h2>

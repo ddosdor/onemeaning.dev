@@ -6,18 +6,22 @@
              }"
              :to="post.path"
   >
-    <figure class="PostPreviewListItem__thumbnail w-full
-                   lg:w-2/5 lg:flex-none
-                  "
-            :class="{
-              'lg:mr-8': position === 'even',
-              'lg:ml-8': position === 'odd',
-            }"
+    <div class="PostPreviewListItem__thumbnail w-full
+                lg:w-2/5 lg:flex-none
+               "
+         :class="{
+           'lg:mr-8': position === 'even',
+           'lg:ml-8': position === 'odd',
+         }"
     >
-      <img class="object-fit max-w-full h-auto rounded-lg"
-           :src="post.thumbnail"
-      >
-    </figure>
+      <SharedUiImage :src="post.thumbnail"
+                     :title="post.title"
+                     :alt="post.title"
+                     custom-class="object-fit max-w-full h-auto rounded-lg"
+                     width="675px"
+                     height="380px"
+      />
+    </div>
     <div class="mt-2 flex flex-col px-2
                 lg:px-0
                "

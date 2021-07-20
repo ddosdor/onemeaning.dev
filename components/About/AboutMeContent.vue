@@ -8,14 +8,17 @@
                 lg:mt-0 lg:ml-auto lg:pl-20
                "
     >
-      <figure>
-        <img class="inline object-cover w-20 h-20 mb-4 ring-1 ring-red-300 rounded-full
-                    md:w-28 md:h-28
-                    lg:w-72 lg:h-72 lg:relative lg:bottom-10
-                   "
-             src="~/assets/images/me.png"
-        >
-      </figure>
+      <SharedUiImage :src="require('~/assets/images/me.png')"
+                     :mobile="require('~/assets/images/me--mobile.png')"
+                     custom-class="inline object-cover w-20 h-20 mb-4 ring-1 ring-red-300 rounded-full
+                                   md:w-28 md:h-28
+                                   lg:w-72 lg:h-72 lg:relative lg:bottom-10
+                                  "
+                     title="Me"
+                     alt="Me"
+                     width="300px"
+                     height="300px"
+      />
     </div>
     <div class="space-y-3">
       <p>

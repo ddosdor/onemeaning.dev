@@ -56,23 +56,17 @@
       <a :href="twitter"
          target="__blank"
       >
-        <SharedUiSocialIcon twitter
-                            as-link
-        />
+        <SharedUiSocialIcon twitter />
       </a>
       <a :href="linkedin"
          target="__blank"
       >
-        <SharedUiSocialIcon linkedin
-                            as-link
-        />
+        <SharedUiSocialIcon linkedin />
       </a>
       <a :href="github"
          target="__blank"
       >
-        <SharedUiSocialIcon github
-                            as-link
-        />
+        <SharedUiSocialIcon github />
       </a>
     </div>
   </header>
