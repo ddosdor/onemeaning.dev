@@ -11,8 +11,8 @@
       <SharedUiImage :src="require('~/assets/images/me.png')"
                      :mobile="require('~/assets/images/me--mobile.png')"
                      custom-class="inline object-cover w-20 h-20 mb-4 ring-1 ring-red-300 rounded-full
-                                   md:w-28 md:h-28
-                                   lg:w-72 lg:h-72 lg:relative lg:bottom-10
+                                   md:w-24 md:h-24
+                                   lg:w-60 lg:h-60 lg:relative lg:bottom-10
                                   "
                      title="Me"
                      alt="Me"

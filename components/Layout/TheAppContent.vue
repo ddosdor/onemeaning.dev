@@ -1,6 +1,6 @@
 <template>
   <main class="PageContent
-               p-4 flex-grow
+               p-6 flex-grow
                md:px-12 md:pt-20
                lg:px-20 lg:w-4/5 lg:mx-auto
                2xl:px-32
