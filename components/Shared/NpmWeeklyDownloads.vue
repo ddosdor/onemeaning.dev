@@ -4,7 +4,8 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
-import { useNpmWeeklyDownloads } from '@/composables';
+
+import { useNpmWeeklyDownloads } from '@/composables/useNpmWeeklyDownloads';
 
 export default defineComponent({
   name: 'NpmWeeklyDownloads',

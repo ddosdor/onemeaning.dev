@@ -4,7 +4,8 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
-import { useGithubInfo } from '@/composables';
+
+import { useGithubInfo } from '@/composables/useGithubInfo';
 
 export default defineComponent({
   name: 'GithubStars',

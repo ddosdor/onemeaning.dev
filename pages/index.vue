@@ -1,48 +1,35 @@
 <template>
   <div>
-    <UiPageSection>
-      <UiPageHeader main
-                    title="Hi there, I'm Sebastian."
+    <SharedUiPageSection>
+      <SharedUiPageHeader main
+                          title="Hi there, I'm Sebastian."
       />
       <AboutMeContent />
-    </UiPageSection>
-    <UiPageSection>
-      <UiPageHeader highlight
-                    title="Recent Posts"
+    </SharedUiPageSection>
+    <SharedUiPageSection>
+      <SharedUiPageHeader highlight
+                          title="Recent Posts"
       />
-      <UiLoadingContentWrapper :is-loading="isLoadingRecentPosts">
-        <RecentPostsList />
-      </UiLoadingContentWrapper>
-    </UiPageSection>
-    <UiPageSection>
-      <UiPageHeader title="Recent Projects" />
-      <UiLoadingContentWrapper :is-loading="isLoadingRecentProjects">
-        <RecentProjectsList />
-      </UiLoadingContentWrapper>
-    </UiPageSection>
+      <SharedUiLoadingContentWrapper :is-loading="isLoadingRecentPosts">
+        <BlogRecentPostsList />
+      </SharedUiLoadingContentWrapper>
+    </SharedUiPageSection>
+    <SharedUiPageSection>
+      <SharedUiPageHeader title="Recent Projects" />
+      <SharedUiLoadingContentWrapper :is-loading="isLoadingRecentProjects">
+        <ProjectsRecentProjectsList />
+      </SharedUiLoadingContentWrapper>
+    </SharedUiPageSection>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
-import UiPageSection from '@/components/Shared/Ui/UiPageSection.vue';
-import UiPageHeader from '@/components/Shared/Ui/UiPageHeader.vue';
-import UiLoadingContentWrapper from '@/components/Shared/Ui/UiLoadingContentWrapper.vue';
-import AboutMeContent from '@/components/About/AboutMeContent.vue';
-import RecentPostsList from '@/components/Blog/RecentPostsList.vue';
-import RecentProjectsList from '@/components/Projects/RecentProjectsList.vue';
 
-import { useBlog, useProjects } from '@/composables';
+import { useBlog } from '@/composables/useBlog';
+import { useProjects } from '@/composables/useProjects';
 
 export default defineComponent({
-  components: {
-    UiPageSection,
-    UiPageHeader,
-    UiLoadingContentWrapper,
-    AboutMeContent,
-    RecentPostsList,
-    RecentProjectsList,
-  },
   setup() {
     const { isLoadingRecentPosts } = useBlog();
     const { isLoadingRecentProjects } = useProjects();

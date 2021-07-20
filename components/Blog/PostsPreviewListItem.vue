@@ -23,9 +23,9 @@
                "
     >
       <div class="flex items-center justify-between">
-        <PostAuthor v-if="post.author"
-                    :avatar="post.author.avatar"
-                    :name="post.author.name"
+        <BlogPostAuthor v-if="post.author"
+                        :avatar="post.author.avatar"
+                        :name="post.author.name"
         />
         <time class="text-sm text-gray-500">{{ formatedPublishPostDate }}</time>
       </div>
@@ -53,13 +53,8 @@ import { defineComponent, computed, PropType } from '@nuxtjs/composition-api';
 import { DateTimeFormatOptions } from '@/index.d';
 import { BlogPostType } from '@/utils/types';
 
-import PostAuthor from './PostAuthor.vue';
-
 export default defineComponent({
   name: 'PostPreview',
-  components: {
-    PostAuthor,
-  },
   props: {
     post: {
       type: Object as PropType<BlogPostType>,

@@ -3,23 +3,20 @@
               md:grid-cols-2
               "
   >
-    <RecentProjectsListItem v-for="(recentProject, index) in recentProjects"
-                            :key="`recent-project-${index}`"
-                            :recent-project="recentProject"
+    <ProjectsRecentProjectsListItem v-for="(recentProject, index) in recentProjects"
+                                    :key="`recent-project-${index}`"
+                                    :recent-project="recentProject"
     />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
-import { useProjects } from '@/composables';
-import RecentProjectsListItem from './RecentProjectsListItem.vue';
+
+import { useProjects } from '@/composables/useProjects';
 
 export default defineComponent({
   name: 'RecentProjectsList',
-  components: {
-    RecentProjectsListItem,
-  },
   setup() {
     const { recentProjects, getRecentProjects } = useProjects();
     getRecentProjects();

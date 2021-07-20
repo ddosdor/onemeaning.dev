@@ -6,8 +6,8 @@
           <a :href="recentProject.github"
              target="__blank"
           >
-            <UiSocialLink github
-                          as-link
+            <SharedUiSocialIcon github
+                                as-link
             />
           </a>
         </li>
@@ -15,17 +15,17 @@
           <a :href="recentProject.npm.link"
              target="__blank"
           >
-            <UiSocialLink npm
-                          as-link
+            <SharedUiSocialIcon npm
+                                as-link
             />
           </a>
         </li>
       </ul>
       <div class="space-x-2 text-xs ml-auto">
-        <GithubStars :username="recentProject.github.username"
-                     :reponame="recentProject.github.reponame"
+        <SharedGithubStars :username="recentProject.github.username"
+                           :reponame="recentProject.github.reponame"
         />
-        <NpmWeeklyDownloads :package="recentProject.npm.package" />
+        <SharedNpmWeeklyDownloads :package="recentProject.npm.package" />
       </div>
     </div>
     <nuxt-link class="RecentProjectsListItem pt-4"
@@ -44,17 +44,9 @@
 <script lang="ts">
 import { defineComponent, PropType } from '@nuxtjs/composition-api';
 import { ProjectPostType } from '@/utils/types';
-import UiSocialLink from '@/components/Shared/Ui/UiSocialIcon.vue';
-import GithubStars from '@/components/Shared/GithubStars.vue';
-import NpmWeeklyDownloads from '@/components/Shared/NpmWeeklyDownloads.vue';
 
 export default defineComponent({
   name: 'RecentProjectsListItem',
-  components: {
-    UiSocialLink,
-    GithubStars,
-    NpmWeeklyDownloads,
-  },
   props: {
     recentProject: {
       type: Object as PropType<ProjectPostType>,

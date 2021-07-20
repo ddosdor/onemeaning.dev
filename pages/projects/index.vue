@@ -8,7 +8,7 @@
 <script>
 import { defineComponent } from '@nuxtjs/composition-api';
 
-import { useProjects } from '@/composables';
+import { useProjects } from '@/composables/useProjects';
 
 export default defineComponent({
   setup() {
