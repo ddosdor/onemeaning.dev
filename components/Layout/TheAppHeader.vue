@@ -9,6 +9,7 @@
     <a class="text-xl mb-4
               md:mb-0
              "
+       href="/"
     >
       <span class="text-xl
                    md:text-2xl
