@@ -1,5 +1,4 @@
 import { ref, useFetch, Ref } from '@nuxtjs/composition-api';
-import axios from 'axios';
 
 import { NPM_API } from '@/utils/consts';
 import { NpmPackageParams } from '@/utils/types';
@@ -12,8 +11,9 @@ export const useNpmWeeklyDownloads = (params: NpmPackageParams): UseNpmWeeklyDow
   const weeklyDownloads = ref<Number>(0);
 
   useFetch(async () => {
-    const npm = await axios.get(`${NPM_API}/downloads/point/last-week/${params.package}`);
-    weeklyDownloads.value = npm?.data?.downloads;
+    const response = await fetch(`${NPM_API}/downloads/point/last-week/${params.package}`);
+    const npm = await response.json();
+    weeklyDownloads.value = npm?.downloads;
   });
 
   return {

@@ -1,5 +1,4 @@
 import { ref, useFetch, Ref } from '@nuxtjs/composition-api';
-import axios from 'axios';
 
 import { GITHUB_API } from '@/utils/consts';
 import { GithubRepositoryParams } from '@/utils/types';
@@ -12,8 +11,9 @@ export const useGithubInfo = (params: GithubRepositoryParams): UseGithubInfoComp
   const stars = ref<Number>(0);
 
   useFetch(async () => {
-    const github = await axios.get(`${GITHUB_API}/${params.username}/${params.reponame}`);
-    stars.value = github?.data?.stargazers_count;
+    const response = await fetch(`${GITHUB_API}/${params.username}/${params.reponame}`);
+    const github = await response.json();
+    stars.value = github?.stargazers_count;
   });
 
   return {
