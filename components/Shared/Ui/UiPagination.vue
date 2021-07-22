@@ -1,9 +1,9 @@
 <template>
   <div class="UiPagination">
-    <button @click="previousPage">
+    <button @click="() => { previousPage(); emitChangePage(); }">
       Previous page
     </button>
-    <button @click="nextPage">
+    <button @click="() => { nextPage(); emitChangePage(); }">
       Next page
     </button>
   </div>
@@ -16,10 +16,16 @@ import { usePagination } from '@/composables/usePagination';
 
 export default defineComponent({
   name: 'PostsPreviewListPagination',
-  setup() {
+  emits: ['changePage'],
+  setup(props, { emit }) {
     const { nextPage, previousPage } = usePagination();
 
+    function emitChangePage() {
+      emit('changePage');
+    }
+
     return {
+      emitChangePage,
       nextPage,
       previousPage,
     };

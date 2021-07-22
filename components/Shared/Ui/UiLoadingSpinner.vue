@@ -2,8 +2,7 @@
   <div v-bind="$attrs"
        class="UiLoadingSpinner relative w-full h-full flex flex-col items-center justify-center animate-fade-in-tooltip"
   >
-    <div class="loader ease-linear rounded-full border-8 border-t-8 h-20 w-20" />
-    <small>Please wait</small>
+    <div class="loader ease-linear rounded-full border-t-8 h-28 w-28" />
   </div>
 </template>
 
@@ -25,5 +24,5 @@ export default defineComponent({
 .UiLoadingSpinner
   .loader
     animation: spinner 1s linear infinite
-    @apply border-green-200 border-t-green-500
+    @apply border-t-green-300
 </style>
