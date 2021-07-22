@@ -1,51 +1,44 @@
 <template>
-  <span class="UiSocialIcon">
-    <GithubIcon v-if="github"
-                :class="{ 'as-link': asLink }"
-    />
-    <LinkedinIcon v-if="linkedin"
-                  :class="{ 'as-link': asLink }"
-    />
-    <TwitterIcon v-if="twitter"
-                 :class="{ 'as-link': asLink }"
-    />
-    <NpmIcon v-if="npm"
-             :class="{ 'as-link': asLink }"
-    />
-  </span>
+  <span class="UiSocialIcon"
+        v-html="svgIcon"
+  />
 </template>
 
 <script lang="ts">
 /* eslint-disable import/no-unresolved */
-import { defineComponent } from '@nuxtjs/composition-api';
-import GithubIcon from './icons/github.svg?inline';
-import LinkedinIcon from './icons/linkedin.svg?inline';
-import TwitterIcon from './icons/twitter.svg?inline';
-import NpmIcon from './icons/npm.svg?inline';
+/* eslint-disable global-require */
+import { defineComponent, ref } from '@nuxtjs/composition-api';
 
 export default defineComponent({
   name: 'UiSocialIcon',
-  components: {
-    GithubIcon,
-    LinkedinIcon,
-    TwitterIcon,
-    NpmIcon,
-  },
   props: {
     github: Boolean,
     twitter: Boolean,
     linkedin: Boolean,
     npm: Boolean,
-    asLink: Boolean,
+  },
+  setup(props) {
+    const svgIcon = ref<String | null>(null);
+    switch (true) {
+      case props.github: svgIcon.value = require('./icons/github.svg?include'); break;
+      case props.twitter: svgIcon.value = require('./icons/twitter.svg?include'); break;
+      case props.linkedin: svgIcon.value = require('./icons/linkedin.svg?include'); break;
+      case props.npm: svgIcon.value = require('./icons/npm.svg?include'); break;
+      default: svgIcon.value = null;
+    }
+
+    return {
+      svgIcon,
+    };
   },
 });
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .UiSocialIcon
-  .as-link
-    &:hover
-      .path
-        fill: $link-color
-    @apply cursor-pointer transition duration-150
+  &:hover
+    path
+      fill: $link-color
+
+  @apply cursor-pointer transition duration-150
 </style>

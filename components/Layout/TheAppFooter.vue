@@ -18,18 +18,21 @@
           <a :href="twitter"
              target="__blank"
              class="text-gray-300 app-link"
+             name="Go to Twitter account"
           >Twitter</a>
         </li>
         <li>
           <a :href="linkedin"
              target="__blank"
              class="text-gray-300 app-link"
+             name="go to LinkedIn account"
           >LinkedIn</a>
         </li>
         <li>
           <a :href="github"
              target="__blank"
              class="text-gray-300 app-link"
+             name="Go to Github account"
           >Github</a>
         </li>
       </ul>

@@ -5,19 +5,17 @@
         <li>
           <a :href="recentProject.github"
              target="__blank"
+             name="Go to github repository"
           >
-            <SharedUiSocialIcon github
-                                as-link
-            />
+            <SharedUiSocialIcon github />
           </a>
         </li>
         <li>
           <a :href="recentProject.npm.link"
              target="__blank"
+             name="Go to node package"
           >
-            <SharedUiSocialIcon npm
-                                as-link
-            />
+            <SharedUiSocialIcon npm />
           </a>
         </li>
       </ul>
@@ -28,7 +26,8 @@
         <SharedNpmWeeklyDownloads :package="recentProject.npm.package" />
       </div>
     </div>
-    <nuxt-link class="RecentProjectsListItem pt-4"
+    <nuxt-link v-if="recentProject"
+               class="RecentProjectsListItem pt-4 min-w-full min-h-full"
                :to="recentProject.path"
     >
       <h2 class="RecentProjectsListItem__title text-xl font-semibold line-clamp-1">

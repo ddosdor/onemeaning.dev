@@ -27,6 +27,9 @@ export default {
     '~/assets/style/variables.sass',
     '~/assets/style/style.sass',
   ],
+  optimizedImages: {
+    optimizeImages: true,
+  },
   styleResources: {
     sass: ['~/assets/style/variables.sass'],
   },
@@ -36,7 +39,8 @@ export default {
   components: true,
   buildModules: [
     '@nuxtjs/style-resources',
-    '@nuxtjs/svg',
+    '@aceforth/nuxt-optimized-images',
+    // '@nuxtjs/svg',
     '@nuxt/typescript-build',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss',
