@@ -3,8 +3,8 @@ import * as path from 'path';
 const resolve = (dir) => path.join(__dirname, dir);
 
 export default {
-  ssr: false,
-  target: 'static',
+  ssr: true,
+  target: 'server',
   router: {
     base: '/onemeaning.dev/',
   },
