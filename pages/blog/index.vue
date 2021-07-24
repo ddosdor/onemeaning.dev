@@ -6,8 +6,12 @@
     />
     <div class="mt-10">
       <SharedUiLoadingContentWrapper :is-loading="isLoading"
+                                     as-skeleton
                                      animation="none"
       >
+        <template #skeleton>
+          <BlogPostsPreviewListSkeleton />
+        </template>
         <LazyBlogPostsPreviewList v-if="!isPostsEmpty"
                                   :key="isLoading"
                                   :posts-list="posts"
@@ -47,7 +51,7 @@ export default defineComponent({
       window.scrollTo({ top: 0, behavior: 'smooth' });
       setTimeout(() => {
         fakeLoading.value = false;
-      }, 1500);
+      }, 1000);
     }
 
     return {
