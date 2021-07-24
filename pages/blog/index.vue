@@ -13,6 +13,7 @@
                                   :posts-list="posts"
         />
         <LazySharedUiPagination v-if="!isPostsEmpty"
+                                :has-next-page="postsHasNextPage"
                                 @changePage="fixPagePosition"
         />
       </SharedUiLoadingContentWrapper>
@@ -31,7 +32,7 @@ export default defineComponent({
   setup() {
     const { query } = useContext();
     const {
-      posts, isPostsEmpty, isLoadingPosts, getPosts,
+      posts, isPostsEmpty, isLoadingPosts, postsHasNextPage, getPosts,
     } = useBlog();
     const fakeLoading = ref<Boolean>(false);
 
@@ -53,6 +54,7 @@ export default defineComponent({
       posts,
       isPostsEmpty,
       isLoading: computed(() => isLoadingPosts.value || fakeLoading.value),
+      postsHasNextPage,
       fixPagePosition,
     };
   },

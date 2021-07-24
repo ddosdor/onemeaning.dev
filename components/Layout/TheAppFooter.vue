@@ -1,5 +1,5 @@
 <template>
-  <footer class="PageFooter bg-gray-800">
+  <footer class="PageFooter bg-gray-800 mt-10">
     <div class="p-4
                 flex flex-col items-center
                 md:px-12 md:flex-row

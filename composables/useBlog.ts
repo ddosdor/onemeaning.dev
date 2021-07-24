@@ -21,6 +21,7 @@ interface UseBlogComposable {
   isRecentPostsEmpty: ComputedRef<Boolean>
   isLoadingPosts: ComputedRef<Boolean>
   isPostsEmpty: ComputedRef<Boolean>
+  postsHasNextPage: ComputedRef<Boolean>
 }
 
 const recentPosts = ref<(BlogPostType & IContentDocument) |
@@ -33,6 +34,7 @@ const isLoadingRecentPosts = ref<Boolean>(false);
 const isRecentPostsEmpty = computed(() => recentPosts.value?.length === 0);
 const isLoadingPosts = ref<Boolean>(false);
 const isPostsEmpty = computed(() => posts.value?.length === 0);
+const postsHasNextPage = computed(() => posts.value?.length === POSTS_LIST_LIMIT_PER_PAGE);
 
 export const useBlog = (): UseBlogComposable => {
   const { $content, query } = useContext();
@@ -79,5 +81,6 @@ export const useBlog = (): UseBlogComposable => {
     isRecentPostsEmpty,
     isLoadingPosts: computed(() => isLoadingPosts.value),
     isPostsEmpty,
+    postsHasNextPage,
   };
 };

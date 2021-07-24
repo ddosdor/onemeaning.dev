@@ -1,8 +1,11 @@
-import { useRouter, watchEffect, useRoute } from '@nuxtjs/composition-api';
+import {
+  computed, useRouter, watchEffect, useRoute, ComputedRef,
+} from '@nuxtjs/composition-api';
 
 interface UsePaginationComposable {
   nextPage(): void
-  previousPage(): void
+  previousPage(): void,
+  currentPage: ComputedRef<String>
 }
 
 export const usePagination = (): UsePaginationComposable => {
@@ -48,5 +51,6 @@ export const usePagination = (): UsePaginationComposable => {
   return {
     nextPage,
     previousPage,
+    currentPage: computed(() => String(route.value.query?.page)),
   };
 };
