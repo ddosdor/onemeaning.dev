@@ -10,9 +10,7 @@
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint:style": "stylelint \"**/*.{vue,sass}\" --ignore-path .gitignore",
     "lint": "yarn lint:js && yarn lint:style",
-    "test": "jest",
-    "predeploy": "nuxt generate --modern",
-    "deploy": "gh-pages -d dist -t true"
+    "test": "jest"
   },
   "engines": {
     "node": "14.17.3"
@@ -44,7 +42,6 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.12.1",
     "fibers": "^5.0.0",
-    "gh-pages": "^3.2.3",
     "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^9.0.0",
     "jest": "^27.0.5",
