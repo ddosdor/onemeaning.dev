@@ -1,6 +1,6 @@
 <template>
   <div class="PostsPreviewListEmpty flex flex-col items-center w-full">
-    <div class="w-4/5 flex justify-center animate-fade-in-up"
+    <div class="w-4/5 flex justify-center"
          data-aos="zoom-y-out"
     >
       <SharedUiImage :src="require('~/assets/images/empty-list.png')"
