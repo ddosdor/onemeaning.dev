@@ -5,6 +5,7 @@
                'lg:flex-row-reverse': position === 'odd',
              }"
              :to="post.path"
+             :data-aos="position === 'even' ? 'fade-in-left' : 'fade-in-right'"
   >
     <div class="PostPreviewListItem__thumbnail w-full
                 lg:w-2/5 lg:flex-none

@@ -29,11 +29,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="sass" scoped>
-.PostsList
-  li:nth-child(even)
-    @apply animate-fade-in-right
-  li:nth-child(odd)
-    @apply animate-fade-in-left
-</style>

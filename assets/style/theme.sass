@@ -11,8 +11,27 @@ html
   @apply cursor-pointer transition duration-100
   @apply font-semibold
 
-/* AOS anmiation */
-[data-aos='zoom-y-out']
-  opacity: 0
-  transform: scaleX(1.03)
+/* AOS animation */
+[data-aos='zoom-y-in']
   transition-property: transform, opacity
+  @apply opacity-0 transform scale-x-95
+
+[data-aos='zoom-y-out']
+  transition-property: transform, opacity
+  @apply opacity-0 transform scale-x-105
+
+[data-aos='fade-in-left']
+  transition-property: transform, opacity 
+  @apply opacity-0 transform translate-x-4
+
+[data-aos='fade-in-right']
+  transition-property: transform, opacity 
+  @apply opacity-0 transform -translate-x-4
+
+[data-aos='fade-in-down']
+  transition-property: transform, opacity 
+  @apply opacity-0 transform -translate-y-4
+
+[data-aos='fade-in-up']
+  transition-property: transform, opacity 
+  @apply opacity-0 transform translate-y-4 

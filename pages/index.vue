@@ -3,7 +3,7 @@
     <SharedUiPageSection>
       <SharedUiPageHeader main
                           title="Hi there, I'm Sebastian."
-                          data-aos="zoom-y-out"
+                          data-aos="zoom-y-in"
       />
       <AboutMeContent />
     </SharedUiPageSection>
@@ -11,13 +11,17 @@
       <SharedUiPageHeader highlight
                           title="Recent Posts"
       />
-      <SharedUiLoadingContentWrapper :is-loading="isLoadingRecentPosts">
+      <SharedUiLoadingContentWrapper :is-loading="isLoadingRecentPosts"
+                                     animation="none"
+      >
         <BlogRecentPostsList />
       </SharedUiLoadingContentWrapper>
     </SharedUiPageSection>
     <SharedUiPageSection>
       <SharedUiPageHeader title="Recent Projects / Repositories" />
-      <SharedUiLoadingContentWrapper :is-loading="isLoadingRecentProjects">
+      <SharedUiLoadingContentWrapper :is-loading="isLoadingRecentProjects"
+                                     animation="none"
+      >
         <ProjectsRecentProjectsList />
       </SharedUiLoadingContentWrapper>
     </SharedUiPageSection>

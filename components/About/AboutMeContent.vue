@@ -18,10 +18,11 @@
                      alt="Me"
                      width="300px"
                      height="300px"
+                     data-aos="zoom-y-out"
       />
     </div>
     <div class="space-y-3">
-      <p data-aos="zoom-y-out"
+      <p data-aos="zoom-y-in"
          data-aos-delay="150"
       >
         I've been working as a <b>Software Developer</b> (specifically with
@@ -50,7 +51,7 @@
         </RoughNotation>
         whenever possible.
       </p>
-      <p data-aos="zoom-y-out"
+      <p data-aos="zoom-y-in"
          data-aos-delay="300"
       >
         Over the past years, I've built from scratch and managed a development
@@ -65,12 +66,12 @@
         ,
         Typescript and Postrgesql.
       </p>
-      <p data-aos="zoom-y-out"
+      <p data-aos="zoom-y-in"
          data-aos-delay="450"
       >
         Now I am looking for new challenges and work with people for whom programming is a passion
       </p>
-      <p data-aos="zoom-y-out"
+      <p data-aos="zoom-y-in"
          data-aos-delay="600"
       >
         Let's hang out on <a class="font-bold app-link"
@@ -97,7 +98,7 @@ export default defineComponent({
 
     setTimeout(() => {
       shouldAnimateRoughNotation.value = true;
-    }, 2200);
+    }, 1000);
 
     return {
       linkedin,
