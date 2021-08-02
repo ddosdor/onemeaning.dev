@@ -1,5 +1,5 @@
 <template>
-  <figure :key="src">
+  <figure>
     <picture>
       <source :srcset="`${fakeImage}`"
               v-bind="$attrs"
