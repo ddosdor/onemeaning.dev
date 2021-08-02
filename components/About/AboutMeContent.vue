@@ -21,44 +21,81 @@
       />
     </div>
     <div class="space-y-3">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Curabitur finibus porta blandit. In a fringilla augue, in
-        <RoughNotation :is-show="true"
-                       type="underline"
-                       color="#2563EB"
-        >
-          consectetur tortor.
-        </RoughNotation>
-      </p>
-      <p>
-        Fusce nunc tellus, rhoncus in
-        <RoughNotation :is-show="true"
+      <p class="animate-fade-in-up">
+        I've been working as a <b>Software Developer</b> (specifically with
+        <RoughNotation :is-show="shouldAnimateRoughNotation"
                        type="underline"
                        color="#FBBF24"
         >
-          metus eget
-        </RoughNotation>, aliquet molestie tellus.
-        Nulla vulputate metus in dolor pulvinar, quis suscipit ante blandit.
-        <RoughNotation :is-show="true"
+          Javascript
+        </RoughNotation>
+        )
+        for about 7 years, and turning my own or someone else's ideas into small applications
+        or large commercial products. My passion is creating clean and
+        <RoughNotation :is-show="shouldAnimateRoughNotation"
+                       type="underline"
+                       color="#2563EB"
+        >
+          readable code
+        </RoughNotation>
+        ,
+        and using
+        <RoughNotation :is-show="shouldAnimateRoughNotation"
                        type="underline"
                        color="#DC2626"
         >
-          Duis tincidunt
+          best practices
         </RoughNotation>
-        faucibus dictum.
+        whenever possible.
       </p>
-      <p>
-        Donec sollicitudin vulputate <span class="font-medium">bibendum</span>.
+      <p class="animate-fade-in-up">
+        Over the past years, I've built from scratch and managed a development
+        team of several people, with full infrastructure administration, CD/CD processes
+        based on Gitlab and Docker, and a technology stack based on
+        <RoughNotation :is-show="shouldAnimateRoughNotation"
+                       type="box"
+                       color="#41B883"
+        >
+          Vue.js
+        </RoughNotation>
+        ,
+        Typescript and Postrgesql.
+      </p>
+      <p class="animate-fade-in-up">
+        Now I am looking for new challenges and work with people for whom programming is a passion
+      </p>
+      <p class="animate-fade-in-up">
+        Let's hang out on <a class="font-bold app-link"
+                             :href="linkedin"
+                             tagret="__blank"
+        >LinkedIn</a> or <a class="font-bold app-link"
+                            :href="twitter"
+                            target="__blank"
+        >Twitter</a>.
       </p>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import { defineComponent, ref } from '@nuxtjs/composition-api';
+import { useSocialLink } from '@/composables/useSocialLinks';
 
 export default defineComponent({
   name: 'AboutMeContent',
+  setup() {
+    const { linkedin, twitter } = useSocialLink();
+    const shouldAnimateRoughNotation = ref<Boolean>(false);
+
+    setTimeout(() => {
+      shouldAnimateRoughNotation.value = true;
+    }, 500);
+
+    return {
+      linkedin,
+      twitter,
+      shouldAnimateRoughNotation,
+    };
+  },
 });
 </script>
