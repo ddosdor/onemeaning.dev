@@ -1,6 +1,7 @@
 <template>
   <nuxt-link class="RecentPostsListItem w-auto"
              :to="recentPost.path"
+             data-aos="fade-in-up"
   >
     <SharedUiImage :src="recentPost.thumbnail"
                    custom-class="object-fit max-w-full h-auto rounded-lg"

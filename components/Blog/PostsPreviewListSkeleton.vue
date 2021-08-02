@@ -7,6 +7,8 @@
           'lg:flex-row': index % 2 === 0,
           'lg:flex-row-reverse': index % 2 !== 0,
         }"
+        :data-aos="index % 2 === 0 ? 'fade-in-right' : 'fade-in-left'"
+        :data-aos-delay="dataAosDelay[index]"
     >
       <div class="w-full h-auto
                   lg:w-2/5 lg:flex-none
@@ -48,13 +50,12 @@ import { defineComponent } from '@nuxtjs/composition-api';
 
 export default defineComponent({
   name: 'PostsPreviewListSkeleton',
+  setup() {
+    const dataAosDelay = [0, 150, 300, 450, 600];
+
+    return {
+      dataAosDelay,
+    };
+  },
 });
 </script>
-
-<style lang="sass" scoped>
-.PostsPreviewListSkeleton
-  li:nth-child(odd)
-    @apply animate-fade-in-right
-  li:nth-child(even)
-    @apply animate-fade-in-left
-</style>

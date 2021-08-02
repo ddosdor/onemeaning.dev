@@ -21,7 +21,9 @@
       />
     </div>
     <div class="space-y-3">
-      <p class="animate-fade-in-down-5">
+      <p data-aos="zoom-y-in"
+         data-aos-delay="150"
+      >
         I've been working as a <b>Software Developer</b> (specifically with
         <RoughNotation :is-show="shouldAnimateRoughNotation"
                        type="underline"
@@ -48,7 +50,9 @@
         </RoughNotation>
         whenever possible.
       </p>
-      <p class="animate-fade-in-down-7">
+      <p data-aos="zoom-y-in"
+         data-aos-delay="300"
+      >
         Over the past years, I've built from scratch and managed a development
         team of several people, with full infrastructure administration, CD/CD processes
         based on Gitlab and Docker, and a technology stack based on
@@ -61,10 +65,14 @@
         ,
         Typescript and Postrgesql.
       </p>
-      <p class="animate-fade-in-down-9">
+      <p data-aos="zoom-y-in"
+         data-aos-delay="450"
+      >
         Now I am looking for new challenges and work with people for whom programming is a passion
       </p>
-      <p class="animate-fade-in-down-11">
+      <p data-aos="zoom-y-in"
+         data-aos-delay="600"
+      >
         Let's hang out on <a class="font-bold app-link"
                              :href="linkedin"
                              tagret="__blank"
@@ -89,7 +97,7 @@ export default defineComponent({
 
     setTimeout(() => {
       shouldAnimateRoughNotation.value = true;
-    }, 2200);
+    }, 1000);
 
     return {
       linkedin,

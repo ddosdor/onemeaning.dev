@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-col divide-y">
+  <div class="flex flex-col divide-y"
+       data-aos="fade-in-down"
+  >
     <div class="flex pb-2">
       <ul class="list-none flex space-x-3">
         <li>

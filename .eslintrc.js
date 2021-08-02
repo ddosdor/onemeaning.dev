@@ -37,6 +37,7 @@ module.exports = {
   rules: {
     'max-len': ['error', { code: 160 }],
     'linebreak-style': 0,
+    'no-underscore-danglgin': 0,
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': [
       0,
