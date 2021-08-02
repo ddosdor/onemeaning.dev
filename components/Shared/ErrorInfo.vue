@@ -1,6 +1,6 @@
 <template>
   <div class="ErrorInfo flex flex-col items-center w-full h-full pt-6">
-    <div class="w-4/5 flex justify-center animate-fade-in-up"
+    <div class="w-4/5 flex justify-center"
          data-aos="zoom-y-out"
     >
       <SharedUiImage :src="image"
@@ -13,7 +13,7 @@
     </div>
     <h3 class="text-2xl font-bold tracking-tight text-center my-4
                md:text-4xl
-               lg:text-6xl
+               lg:text-5xl
               "
         data-aos="zoom-y-out"
         data-aos-delay="150"

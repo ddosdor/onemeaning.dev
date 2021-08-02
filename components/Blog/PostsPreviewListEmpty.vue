@@ -11,15 +11,18 @@
                      height="290px"
       />
     </div>
-    <h3 class="text-lg font-bold tracking-tight
-               lg:text-3xl
+    <h3 class="text-2xl font-bold tracking-tight text-center my-4
+               md:text-4xl
+               lg:text-5xl
               "
         data-aos="zoom-y-out"
         data-aos-delay="150"
     >
-      Ups! It looks like there are no more posts :(
+      Whoops! <br>It looks like there are no more posts :(
     </h3>
-    <nuxt-link class="app-link mt-4"
+    <nuxt-link class="app-link mt-4
+                      md:text-lg
+               "
                to="/blog?page=1"
                data-aos="zoom-y-in"
                data-aos-delay="300"
