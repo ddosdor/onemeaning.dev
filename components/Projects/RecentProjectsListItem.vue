@@ -5,7 +5,7 @@
     <div class="flex pb-2">
       <ul class="list-none flex space-x-3">
         <li>
-          <a :href="recentProject.github"
+          <a :href="recentProject.github.link"
              target="__blank"
              name="Go to github repository"
           >
@@ -28,9 +28,10 @@
         <SharedNpmWeeklyDownloads :package="recentProject.npm.package" />
       </div>
     </div>
-    <nuxt-link v-if="recentProject"
-               class="RecentProjectsListItem pt-4 min-w-full min-h-full"
-               :to="recentProject.path"
+    <a v-if="recentProject"
+       class="RecentProjectsListItem pt-4 min-w-full min-h-full"
+       :href="recentProject.github.link"
+       target="__blank"
     >
       <h2 class="RecentProjectsListItem__title text-xl font-semibold line-clamp-1">
         {{ recentProject.title }}
@@ -38,7 +39,7 @@
       <p class="mt-2 line-clamp-4">
         {{ recentProject.description }}
       </p>
-    </nuxt-link>
+    </a>
   </div>
 </template>
 

@@ -59,15 +59,11 @@ export default {
     },
   },
   generate: {
-    // According to https://content.nuxtjs.org/advanced/ and version that I use (>12.14)
-    // generate dynamics routes in nuxt.config is not required
     async routes() {
       // eslint-disable-next-line global-require
       const { $content } = require('@nuxt/content');
       const blog = await $content('blog').fetch();
-      const projects = await $content('projects').fetch();
-      const files = [...blog, ...projects];
-      return files.map((file) => (file.path === '/index' ? '/' : file.path));
+      return blog.map((file) => (file.path === '/index' ? '/' : file.path));
     },
   },
 };
