@@ -5,7 +5,7 @@
              "
   >
     <div class="flex-shrink-0
-                lg:mt-0 lg:ml-auto lg:pl-20
+                lg:mt-0 lg:ml-auto lg:pl-16
                "
     >
       <SharedUiImage :src="require('~/assets/images/me.png')"
