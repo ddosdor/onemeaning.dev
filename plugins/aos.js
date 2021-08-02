@@ -11,7 +11,7 @@ export default ({ app }) => {
   // eslint-disable-next-line new-cap
   nuxtApp.AOS = new AOS.init({
     once: true,
-    disable: 'phone',
+    disable: false,
     duration: 700,
     easing: 'ease-out-cubic',
     startEvent: 'load',
