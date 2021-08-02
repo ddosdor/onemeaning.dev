@@ -1,9 +1,9 @@
 <template>
   <div>
     <SharedUiPageSection>
-      <SharedUiPageHeader class="animate-fade-in-down"
-                          main
+      <SharedUiPageHeader main
                           title="Hi there, I'm Sebastian."
+                          data-aos="zoom-y-out"
       />
       <AboutMeContent />
     </SharedUiPageSection>
