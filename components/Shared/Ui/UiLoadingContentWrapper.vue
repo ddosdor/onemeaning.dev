@@ -1,7 +1,8 @@
 <template>
   <div class="UiLoadingContentWrapper relative">
     <div v-if="isLoading && !asSkeleton"
-         class="absolute top-24 w-full animate-fade-in-down"
+         class="absolute top-24 w-full"
+         data-aos="fade-in-down"
     >
       <LazySharedUiLoadingSpinner data-testid="ui-loading-spinner" />
     </div>
@@ -12,10 +13,8 @@
     </div>
     <div :class="{'opacity-5' : isLoading && !asSkeleton,
                   'hidden' : isLoading && asSkeleton,
-                  'animate-fade-in-up': (!isLoading && !asSkeleton) && animation === 'fade-in-up',
-                  'shift-left-right': (!isLoading && !asSkeleton) && animation === 'shift-left-right',
-                  '': !isLoading && animation === 'none',
-    }"
+         }"
+         :data-aos="animation"
     >
       <slot />
     </div>
@@ -38,17 +37,9 @@ export default defineComponent({
       type: String,
       default: 'fade-in-up',
       validator(value: string) {
-        return ['fade-in-up', 'shift-left-right', 'none'].includes(value);
+        return ['fade-in-up', 'fade-in-down', 'none'].includes(value);
       },
     },
   },
 });
 </script>
-
-<style lang="sass" scoped>
-.shift-left-right
-  *:nth-child(even)
-    @apply animate-fade-in-right
-  *:nth-child(odd)
-    @apply animate-fade-in-left
-</style>
