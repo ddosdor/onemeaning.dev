@@ -18,7 +18,6 @@
                      alt="Me"
                      width="300px"
                      height="300px"
-                     data-aos="zoom-y-in"
       />
     </div>
     <div class="space-y-3">
