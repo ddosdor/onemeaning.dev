@@ -15,7 +15,7 @@
       </SharedUiLoadingContentWrapper>
     </SharedUiPageSection>
     <SharedUiPageSection>
-      <SharedUiPageHeader title="Recent Projects" />
+      <SharedUiPageHeader title="Recent Projects / Repositories" />
       <SharedUiLoadingContentWrapper :is-loading="isLoadingRecentProjects">
         <ProjectsRecentProjectsList />
       </SharedUiLoadingContentWrapper>
