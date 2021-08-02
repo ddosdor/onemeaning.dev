@@ -1,27 +1,29 @@
 <template>
   <div>
-    <SharedUiPageHeader main
-                        highlight
-                        title="Blog."
-    />
-    <div class="mt-10">
-      <SharedUiLoadingContentWrapper :is-loading="isLoading"
-                                     as-skeleton
-                                     animation="none"
-      >
-        <template #skeleton>
-          <BlogPostsPreviewListSkeleton />
-        </template>
-        <LazyBlogPostsPreviewList v-if="!isPostsEmpty"
-                                  :key="isLoading"
-                                  :posts-list="posts"
-        />
-        <LazySharedUiPagination v-if="!isPostsEmpty"
-                                :has-next-page="postsHasNextPage"
-                                @changePage="fixPagePosition"
-        />
-      </SharedUiLoadingContentWrapper>
-    </div>
+    <SharedUiPageSection>
+      <SharedUiPageHeader main
+                          highlight
+                          title="Blog."
+      />
+      <div class="mt-10">
+        <SharedUiLoadingContentWrapper :is-loading="isLoading"
+                                       as-skeleton
+                                       animation="none"
+        >
+          <template #skeleton>
+            <BlogPostsPreviewListSkeleton />
+          </template>
+          <LazyBlogPostsPreviewList v-if="!isPostsEmpty"
+                                    :key="isLoading"
+                                    :posts-list="posts"
+          />
+          <LazySharedUiPagination v-if="!isPostsEmpty"
+                                  :has-next-page="postsHasNextPage"
+                                  @changePage="fixPagePosition"
+          />
+        </SharedUiLoadingContentWrapper>
+      </div>
+    </SharedUiPageSection>
   </div>
 </template>
 

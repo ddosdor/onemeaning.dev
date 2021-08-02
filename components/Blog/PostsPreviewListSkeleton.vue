@@ -1,5 +1,5 @@
 <template>
-  <ul class="PostsPreviewListSkeleton">
+  <ul class="PostsPreviewListSkeleton h-screen">
     <li v-for="index in [0, 1, 2, 3, 4]"
         :key="`blog-post-skeleton-${index}`"
         class="PostsPreviewListSkeleton__item flex flex-col mb-20"
@@ -8,7 +8,7 @@
           'lg:flex-row-reverse': index % 2 !== 0,
         }"
     >
-      <div class="w-full
+      <div class="w-full h-auto
                   lg:w-2/5 lg:flex-none
                  "
            :class="{
@@ -16,7 +16,7 @@
              'lg:ml-8': index % 2 !== 0,
            }"
       >
-        <SharedUiSkeletonBox class="PostsPreviewListSkeleton__thumbnail-skeleton rounded-lg w-full" />
+        <SharedUiSkeletonBox class="PostsPreviewListSkeleton__thumbnail-skeleton rounded-lg w-full h-full" />
       </div>
       <div class="mt-2 flex flex-col px-2 w-full
                   lg:px-0
@@ -48,8 +48,8 @@ export default defineComponent({
 
 <style lang="sass" scoped>
 .PostsPreviewListSkeleton
-  &__thumbnail-skeleton
-    height: 224px
+  // &__thumbnail-skeleton
+  //   height: 224px
 
   li:nth-child(odd)
     @apply animate-fade-in-right
