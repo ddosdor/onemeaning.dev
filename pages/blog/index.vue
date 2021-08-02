@@ -17,6 +17,7 @@
                                     :key="isLoading"
                                     :posts-list="posts"
           />
+          <LazyBlogPostsPreviewListEmpty v-if="!isLoading && isPostsEmpty" />
           <LazySharedUiPagination v-if="!isPostsEmpty"
                                   :has-next-page="postsHasNextPage"
                                   @changePage="fixPagePosition"
