@@ -29,7 +29,7 @@
 
 <script lang="ts">
 import {
-  defineComponent, useContext, ref, computed, watch,
+  defineComponent, useContext, ref, computed, watch, onMounted,
 } from '@nuxtjs/composition-api';
 
 import { useBlog } from '@/composables/useBlog';
@@ -55,6 +55,8 @@ export default defineComponent({
         fakeLoading.value = false;
       }, 1000);
     }
+
+    onMounted(() => fixPagePosition());
 
     return {
       posts,
