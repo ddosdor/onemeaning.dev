@@ -1,5 +1,5 @@
 <template>
-  <ul class="PostsPreviewListSkeleton h-screen">
+  <ul class="PostsPreviewListSkeleton">
     <li v-for="index in [0, 1, 2, 3, 4]"
         :key="`blog-post-skeleton-${index}`"
         class="PostsPreviewListSkeleton__item flex flex-col mb-20"
@@ -16,7 +16,12 @@
              'lg:ml-8': index % 2 !== 0,
            }"
       >
-        <SharedUiSkeletonBox class="PostsPreviewListSkeleton__thumbnail-skeleton rounded-lg w-full h-full" />
+        <SharedUiFakeImage alt="Loading image"
+                           title="Loading image"
+                           custom-class="object-fit max-w-full h-auto rounded-lg"
+                           width="675px"
+                           height="380px"
+        />
       </div>
       <div class="mt-2 flex flex-col px-2 w-full
                   lg:px-0
@@ -48,9 +53,6 @@ export default defineComponent({
 
 <style lang="sass" scoped>
 .PostsPreviewListSkeleton
-  // &__thumbnail-skeleton
-  //   height: 224px
-
   li:nth-child(odd)
     @apply animate-fade-in-right
   li:nth-child(even)

@@ -6,12 +6,12 @@
       <LazySharedUiLoadingSpinner data-testid="ui-loading-spinner" />
     </div>
     <div v-if="isLoading && asSkeleton"
-         class="absolute top-0 w-full"
+         class="relative top-0 w-full h-full"
     >
       <slot name="skeleton" />
     </div>
     <div :class="{'opacity-5' : isLoading && !asSkeleton,
-                  'opacity-0' : isLoading && asSkeleton,
+                  'hidden' : isLoading && asSkeleton,
                   'animate-fade-in-up': (!isLoading && !asSkeleton) && animation === 'fade-in-up',
                   'shift-left-right': (!isLoading && !asSkeleton) && animation === 'shift-left-right',
                   '': !isLoading && animation === 'none',
