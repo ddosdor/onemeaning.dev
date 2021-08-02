@@ -6,13 +6,7 @@ import { RECENT_PROJECTS_LIST_LIMIT } from '@/utils/consts';
 
 interface UseProjectsComposable {
   getRecentProjects(): Promise<void>
-  getProjects(): Promise<void>
   recentProjects: ComputedRef<
-    (ProjectPostType & IContentDocument) |
-    (ProjectPostType & IContentDocument)[] |
-    null
-  >
-  projects: ComputedRef<
     (ProjectPostType & IContentDocument) |
     (ProjectPostType & IContentDocument)[] |
     null
@@ -21,9 +15,6 @@ interface UseProjectsComposable {
   isRecentProjectsEmpty: ComputedRef<Boolean>
 }
 
-const projects = ref<(ProjectPostType & IContentDocument) |
-                     (ProjectPostType & IContentDocument)[] |
-                     null>([]);
 const recentProjects = ref<(ProjectPostType & IContentDocument) |
                            (ProjectPostType & IContentDocument)[] |
                            null>([]);
@@ -49,18 +40,9 @@ export const useProjects = (): UseProjectsComposable => {
     }
   };
 
-  const getProjects = async (): Promise<void> => {
-    projects.value = await $content('projects')
-      .only(['title', 'thumbnail', 'excerpt', 'path'])
-      .sortBy('date', 'desc')
-      .fetch<ProjectPostType>();
-  };
-
   return {
     getRecentProjects,
-    getProjects,
     recentProjects: computed(() => recentProjects.value),
-    projects: computed(() => projects.value),
     isLoadingRecentProjects: computed(() => isLoadingRecentProjects.value),
     isRecentProjectsEmpty,
   };
