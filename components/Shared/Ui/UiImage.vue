@@ -44,15 +44,10 @@ export default defineComponent({
   },
   setup(props) {
     const srcMobile = ref<String>('');
-    const srcMobileWebp = ref<String>('');
     srcMobile.value = `${props.mobile}, ${props.src} 2x`;
-    srcMobileWebp.value = `${props.mobile}?webp, ${props.src}?webp 2x`;
 
     return {
       srcSet: computed(() => (props.mobile ? srcMobile.value : props.src)),
-      srcSetWebp: computed(() => (
-        props.mobile ? srcMobileWebp.value : `${props.src}?webp`
-      )),
     };
   },
 });

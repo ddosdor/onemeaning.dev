@@ -33,10 +33,7 @@
         />
         <time class="text-sm text-gray-500">{{ formatedPublishPostDate }}</time>
       </div>
-      <h2 class="mt-4 flex
-                 lg:mt-4
-                "
-      >
+      <h2 class="mt-4 flex">
         <a :href="post.path"
            class="PostPreviewListItem__title text-lg font-bold w-full
                   md:text-xl

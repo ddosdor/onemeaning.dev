@@ -1,13 +1,19 @@
 <template>
   <div class="UiLoadingContentWrapper relative">
-    <div v-if="isLoading"
+    <div v-if="isLoading && !asSkeleton"
          class="absolute top-24 w-full animate-fade-in-down"
     >
       <LazySharedUiLoadingSpinner data-testid="ui-loading-spinner" />
     </div>
-    <div :class="{'opacity-5' : isLoading,
-                  'animate-fade-in-up': !isLoading && animation === 'fade-in-up',
-                  'shift-left-right': !isLoading && animation === 'shift-left-right',
+    <div v-if="isLoading && asSkeleton"
+         class="relative top-0 w-full h-full"
+    >
+      <slot name="skeleton" />
+    </div>
+    <div :class="{'opacity-5' : isLoading && !asSkeleton,
+                  'hidden' : isLoading && asSkeleton,
+                  'animate-fade-in-up': (!isLoading && !asSkeleton) && animation === 'fade-in-up',
+                  'shift-left-right': (!isLoading && !asSkeleton) && animation === 'shift-left-right',
                   '': !isLoading && animation === 'none',
     }"
     >
@@ -23,6 +29,7 @@ export default defineComponent({
   name: 'UiLoadingContentWrapper',
   props: {
     isContentVisibleDuringLoading: Boolean,
+    asSkeleton: Boolean,
     isLoading: {
       type: Boolean,
       default: false,
