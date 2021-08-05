@@ -13,7 +13,7 @@ export default ({ app }) => {
     once: true,
     disable: false,
     duration: 700,
-    offser: -100,
+    offser: 200,
     easing: 'ease-out-cubic',
     startEvent: 'load',
   });
