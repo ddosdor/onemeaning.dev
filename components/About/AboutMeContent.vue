@@ -23,7 +23,6 @@
     <div class="space-y-3">
       <p data-aos="zoom-y-in"
          data-aos-delay="150"
-         data-aos-offset="-100"
       >
         I've been working as a <b>Software Developer</b> (specifically with
         <RoughNotation :is-show="shouldAnimateRoughNotation"
@@ -53,7 +52,6 @@
       </p>
       <p data-aos="zoom-y-in"
          data-aos-delay="300"
-         data-aos-offset="-100"
       >
         Over the past years, I've built from scratch and managed a development
         team of several people, with full infrastructure administration, CD/CD processes
@@ -69,13 +67,11 @@
       </p>
       <p data-aos="zoom-y-in"
          data-aos-delay="450"
-         data-aos-offset="-100"
       >
         Now I am looking for new challenges and work with people for whom programming is a passion
       </p>
       <p data-aos="zoom-y-in"
          data-aos-delay="600"
-         data-aos-offset="-100"
       >
         Let's hang out on <a class="font-bold app-link"
                              :href="linkedin"
