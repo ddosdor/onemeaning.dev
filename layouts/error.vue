@@ -4,10 +4,12 @@
                          title="Whoops! <br> Not sure where you are?"
                          :image="require('~/assets/images/error-400.png')"
     />
-    <LazySharedErrorInfo v-else
-                         title="I am just as surprised! <br> I don't know what's going on."
-                         :image="require('~/assets/images/error-500.png')"
-    />
+    <template v-else>
+      <LazySharedErrorInfo title="I am just as surprised! <br> I don't know what's going on."
+                           :image="require('~/assets/images/error-500.png')"
+      />
+      <pre v-if="isDev"> {{ error.message }}</pre>
+    </template>
   </div>
 </template>
 
@@ -22,6 +24,11 @@ export default defineComponent({
       type: {} as PropType<NuxtError>,
       default: () => ({} as NuxtError),
     },
+  },
+  setup() {
+    const isDev = process.env.NODE_ENV === 'development';
+
+    return { isDev };
   },
 });
 </script>
