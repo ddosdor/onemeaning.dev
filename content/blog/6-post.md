@@ -34,5 +34,15 @@ const value = 2;
 function someFunction() {
   return 'Im function!';
 }
+```
 
+and some code in Typescript
+
+```typescript
+const myNumber: number = 3;
+
+interface SomeInterface {
+  [key: string]: string
+  name: string
+}
 ```
