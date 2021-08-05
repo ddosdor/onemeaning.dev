@@ -1,5 +1,5 @@
 import * as path from 'path';
-import * as shiki from 'shiki';
+// import * as shiki from 'shiki';
 
 const resolve = (dir) => path.join(__dirname, dir);
 
@@ -67,15 +67,15 @@ export default {
       return blog.map((file) => (file.path === '/index' ? '/' : file.path));
     },
   },
-  content: {
-    markdown: {
-      async highlighter() {
-        const highlighter = await shiki.getHighlighter({
-          // Complete themes: https://github.com/shikijs/shiki/tree/master/packages/themes
-          theme: 'material-palenight',
-        });
-        return (rawCode, lang) => highlighter.codeToHtml(rawCode, lang);
-      },
-    },
-  },
+  // content: {
+  //   markdown: {
+  //     async highlighter() {
+  //       const highlighter = await shiki.getHighlighter({
+  //         // Complete themes: https://github.com/shikijs/shiki/tree/master/packages/themes
+  //         theme: 'material-palenight',
+  //       });
+  //       return (rawCode, lang) => highlighter.codeToHtml(rawCode, lang);
+  //     },
+  //   },
+  // },
 };
