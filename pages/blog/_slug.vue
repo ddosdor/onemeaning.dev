@@ -69,6 +69,6 @@ export default defineComponent({
     @apply text-xl
   p
     @apply my-6
-  .shiki
+  .hljs
     @apply p-2 text-sm
 </style>

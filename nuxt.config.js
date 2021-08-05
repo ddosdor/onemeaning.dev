@@ -1,7 +1,8 @@
 import * as path from 'path';
-import * as shiki from 'shiki';
+import highlightjs from 'highlight.js';
 
 const resolve = (dir) => path.join(__dirname, dir);
+const wrap = (code, lang) => `<pre><code class="hljs ${lang}">${code}</code></pre>`;
 
 export default {
   ssr: true,
@@ -27,6 +28,7 @@ export default {
   css: [
     '~/assets/style/variables.sass',
     '~/assets/style/style.sass',
+    'highlight.js/styles/atom-one-dark.css',
   ],
   optimizedImages: {
     optimizeImages: true,
@@ -69,12 +71,11 @@ export default {
   },
   content: {
     markdown: {
-      async highlighter() {
-        const highlighter = await shiki.getHighlighter({
-          // Complete themes: https://github.com/shikijs/shiki/tree/master/packages/themes
-          theme: 'material-palenight',
-        });
-        return (rawCode, lang) => highlighter.codeToHtml(rawCode, lang);
+      highlighter(rawCode, lang) {
+        if (!lang) {
+          return wrap(highlightjs.highlightAuto(rawCode).value, lang);
+        }
+        return wrap(highlightjs.highlight(lang, rawCode).value, lang);
       },
     },
   },
