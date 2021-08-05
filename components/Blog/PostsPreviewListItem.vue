@@ -6,6 +6,7 @@
              }"
              :to="post.path"
              :data-aos="position === 'even' ? 'fade-in-left' : 'fade-in-right'"
+             data-aos-offset="-100"
   >
     <div class="PostPreviewListItem__thumbnail w-full
                 lg:w-2/5 lg:flex-none
