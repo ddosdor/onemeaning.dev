@@ -7,42 +7,6 @@ author:
   name: Sebastian
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere posuere tellus, non porttitor turpis interdum vitae. Phasellus leo odio, ornare at risus sed, ornare rutrum mi. Suspendisse tempor, odio eu facilisis dapibus, orci orci vulputate purus, eget porta tortor nisi eget sapien. Donec vehicula vitae ex non malesuada. Sed porttitor pulvinar dui, in fermentum ex bibendum commodo. Fusce sed mollis purus. Pellentesque vehicula enim nec placerat ultrices.
+I've always believed that the best way to learn and deepen your knowledge is to pass it on. So, early in my career as a developer, I decided to create my own personal blog where I could share what I enjoy, experiment with new tools (everything was new to me back then), and keep notes on what I had already learned.
 <!--more-->
-
-Donec eros velit, mattis a semper sed, tempor vitae tellus. Cras sit amet scelerisque purus, eget posuere dui. Nullam at faucibus neque. Vivamus porta, magna eu sodales volutpat, sapien mauris commodo enim, eget aliquet neque sapien quis elit. Nunc mi nibh, sagittis luctus blandit id, feugiat ac lorem. Curabitur mollis urna at felis fringilla, a volutpat diam tempor. Vivamus orci tellus, varius ac nisl quis, placerat fermentum nunc. Phasellus nec leo augue.
-
-Donec eros velit, mattis a semper sed, tempor vitae tellus. Cras sit amet scelerisque purus, eget posuere dui. Nullam at faucibus neque. Vivamus porta, magna eu sodales volutpat, sapien mauris commodo enim, eget aliquet neque sapien quis elit. Nunc mi nibh, sagittis luctus blandit id, feugiat ac lorem. Curabitur mollis urna at felis fringilla, a volutpat diam tempor. Vivamus orci tellus, varius ac nisl quis, placerat fermentum nunc. Phasellus nec leo augue.
-
-## Title
-
-Donec eros velit, mattis a semper sed, tempor vitae tellus. Cras sit amet scelerisque purus, eget posuere dui. Nullam at faucibus neque. Vivamus porta, magna eu sodales volutpat,
-
-### Title
-
-Donec eros velit, mattis a semper sed, tempor vitae tellus. Cras sit amet scelerisque purus, eget posuere dui. Nullam at faucibus neque. Vivamus porta, magna eu sodales volutpat,
-
-- first
-- second
-- last
-
-Some code:
-
-```javascript
-const value = 2;
-
-function someFunction() {
-  return 'Im function!';
-}
-```
-
-and some code in Typescript
-
-```typescript
-const myNumber: number = 3;
-
-interface SomeInterface {
-  [key: string]: string
-  name: string
-}
-```
+At the time, I thought Wordpress would be the best choice for a blog. Since I had no experience with the tool at the time, I didn't realize how much time, money, and problems it would cost me. Nevertheless, the site existed for a while.
