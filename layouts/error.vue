@@ -16,6 +16,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from '@nuxtjs/composition-api';
 import { NuxtError } from '@nuxt/types';
+import { useAppEnvironment } from '@/composables/useAppEnvironment';
 
 export default defineComponent({
   layout: 'basic',
@@ -26,7 +27,7 @@ export default defineComponent({
     },
   },
   setup() {
-    const isDev = process.env.NODE_ENV === 'development';
+    const { isDev } = useAppEnvironment();
 
     return { isDev };
   },

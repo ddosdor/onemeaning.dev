@@ -1,6 +1,6 @@
 ---
-isDraft: false
-title: How I built my blog with Nuxt.js
+isDraft: true
+title: Dont do that! Vue antipatterns
 date: 2020-05-25T20:47:18
 thumbnail: images/blog/thumbnails/how_i_build_my_blog.png
 author:
