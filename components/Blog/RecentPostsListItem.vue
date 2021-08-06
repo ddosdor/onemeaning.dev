@@ -11,7 +11,7 @@
                    height="380px"
     />
     <h2 class="RecentPostsListItem__title text-lg font-semibold mt-6 line-clamp-1">
-      {{ recentPost.title }}
+      {{ recentPost.title }} {{ recentPost.isDraft ? '[draft]' : '' }}
     </h2>
     <p class="mt-2 line-clamp-3">
       <nuxt-content :document="{ body: recentPost.excerpt }" />

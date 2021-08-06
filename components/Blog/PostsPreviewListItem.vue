@@ -39,7 +39,7 @@
            class="PostPreviewListItem__title text-lg font-bold w-full
                   md:text-xl
                  "
-        >{{ post.title }}</a>
+        >{{ post.title }} {{ post.isDraft ? '[draft]' : '' }}</a>
       </h2>
       <p v-if="post.excerpt"
          class="mt-2 line-clamp-3"
