@@ -13,7 +13,7 @@
                         :avatar="post.author.avatar"
                         :name="post.author.name"
         />
-        <div class="rounded-full w-1 h-1 bg-gray-300" />
+        <div class="app-dot-divider" />
         <time class="text-sm text-gray-500">{{ formatDate(post.date) }}</time>
       </div>
       <SharedUiImage :src="post.thumbnail"

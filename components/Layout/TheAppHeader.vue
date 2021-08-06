@@ -12,7 +12,7 @@
          href="/"
          name="onemeaning.dev"
       >
-        <span class="text-2xl
+        <span class="text-2xl text-gray-800
                    md:text-3xl
                    lg:text-4xl
                   "
@@ -32,23 +32,27 @@
         </small>
       </a>
       <nav class="space-x-3 mb-4
-                md:ml-auto md:mb-0
-               "
+                  md:ml-auto md:mb-0
+                 "
       >
-        <nuxt-link class="app-link"
+        <nuxt-link class="app-link font-semibold"
                    to="/"
         >
           About
         </nuxt-link>
-        <nuxt-link class="app-link"
+        <nuxt-link class="app-link font-semibold"
                    to="/blog?page=1"
         >
           Blog
         </nuxt-link>
       </nav>
+      <div class="app-dot-divider hidden ml-4
+                  md:block
+                 "
+      />
       <div class="flex space-x-2
-                md:ml-6
-               "
+                  md:ml-6
+                 "
       >
         <a :href="twitter"
            target="__blank"
