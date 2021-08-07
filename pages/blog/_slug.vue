@@ -57,11 +57,12 @@ export default defineComponent({
 .nuxt-content
   li
     &::before
-      bottom: 9px
       content: ' '
+      top: 9px
       @apply absolute left-0 h-2 w-2 bg-gray-300 rounded-full
     @apply relative pl-4
-  h2, h3
+  h2,
+  h3
     @apply mt-8 mb-3 font-extrabold
   h2
     @apply text-2xl
