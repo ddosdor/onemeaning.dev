@@ -84,4 +84,7 @@ export default defineComponent({
 
     &:hover
       color: darken($link-color, 20%)
+
+  code
+    @apply inline-block p-1 bg-gray-100 text-sm
 </style>

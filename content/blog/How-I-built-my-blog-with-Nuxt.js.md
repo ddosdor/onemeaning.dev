@@ -36,19 +36,31 @@ Since Nuxt.js is a framework that uses Vue.js and takes advantage of all its fea
 
 ### nuxt-content
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at condimentum massa. Phasellus efficitur, justo a hendrerit elementum, eros justo scelerisque enim, in gravida ligula dui at elit. Aenean eleifend tellus sit amet turpis consequat lacinia. Donec consectetur nulla vitae nulla pretium, rhoncus egestas nisl elementum
+As I described before, it's important for me to add new posts very fast, without additional and complicated tools.  So I had to find something not large scale, but something smaller like git-based headless CMS. 
+There are many modules for Nuxt.js, so I had to find something that meets my requirements and I found one perfect like [nuxt-content](https://content.nuxtjs.org/). It allows you to create a blog or documentation page from Markdown, JSON, YAML, XML and CSV files and has some other powerful features like Vue components in markdown, syntax highlighting of code blocks in markdown files and full text search.
 
-### Composition API
+With this solution, for example, all you need to do is open a new pull request, write a new post in your IDE or even directly on Github and simply merge it into the main repository. This is magical! ;)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at condimentum massa. Phasellus efficitur, justo a hendrerit elementum, eros justo scelerisque enim, in gravida ligula dui at elit. Aenean eleifend tellus sit amet turpis consequat lacinia. Donec consectetur nulla vitae nulla pretium, rhoncus egestas nisl elementum
+### Composition API and TypeScript
+
+I've been working with Vue.js for many years now, and many of those projects have been large monoliths where unfortunately I couldn't afford to upgrade to a newer version of Vue to take advantage of all its new features. All my new projects I'm working on now are written using Vue 3.x, and I love working with the Composition API and TypeScript. Composition API, is a new way to write Vue components. This API allows features to be grouped together logically, rather than having to organize your single-file components by function. Sadly in this moment, when I write this post, Nuxt.js is in version 2.15.17 which use Vue 2.x so without all new Vue 3.x features.
+But, thanks to Nuxt comunity, there is a module like [@nuxtjs/composition-api](https://composition-api.nuxtjs.org/) that add Vue 3 Composition API feature to Nuxt.js.
+
+TypeScript is a language built on top of JavaScript and essentially helps you validate your code is working in the editor before it runs. I used to think that using TypeScript on the frontend was an unnecessary abstraction. Today I can't imagine writing even a line of code without using TypeScript when I realized that it has seriously increased my speed and accuracy. I notice more bugs while editing and find that I no longer need to look at the documentation as often because I can tell a lot about the requirements of a function or component directly in the editor.
+
+Nuxt.js has full TypeScript support and that's right out of the box.
 
 ### TailwindCSS
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at condimentum massa. Phasellus efficitur, justo a hendrerit elementum, eros justo scelerisque enim, in gravida ligula dui at elit. Aenean eleifend tellus sit amet turpis consequat lacinia. Donec consectetur nulla vitae nulla pretium, rhoncus egestas nisl elementum
+[TailwindCSS](https://tailwindcss.com/) is described as a CSS framework based primarily on usability. Instead of focusing on the functionality of a styled element, Tailwind focuses on how it should be displayed. It works at a lower level and provides a set of CSS helper classes. For me, it is very important that you can quickly and easily create your own design using these classes.
 
-### Typescript
+When I started using TailwindCSS I realized that I almost never write a single CSS or SASS style in my components (except for a few minor cases). Now when writing a component I can focus only on HTML (without getting a headache finding the right class names for the elements), and this I think can be very important, especially for single-file components.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at condimentum massa. Phasellus efficitur, justo a hendrerit elementum, eros justo scelerisque enim, in gravida ligula dui at elit. Aenean eleifend tellus sit amet turpis consequat lacinia. Donec consectetur nulla vitae nulla pretium, rhoncus egestas nisl elementum
+TailwindCSS also has many other advantages, such as:
+- **Great and easy to navigate [docs](https://tailwindcss.com/docs)**
+- **Provides tree-shaking** that removes unused CSS from production compilations for maximum performance.
+- **VS Code extensions**: [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) for its excellent autocomplete, which reduced the number of times I referenced class names in the docs and with your custom classes that can be extended or added in the config file.
+- **Full customization** using the `talwind.config.js file`
 
 ### Hosting and SSR
 
