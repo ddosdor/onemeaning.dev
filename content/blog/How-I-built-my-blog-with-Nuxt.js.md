@@ -1,5 +1,5 @@
 ---
-isDraft: true
+isDraft: false
 title: How and why I built my blog with Nuxt.js
 date: 2020-05-25T20:47:18
 thumbnail: images/blog/thumbnails/how_i_build_my_blog.png
@@ -64,8 +64,21 @@ TailwindCSS also has many other advantages, such as:
 
 ### Hosting and SSR
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at condimentum massa. Phasellus efficitur, justo a hendrerit elementum, eros justo scelerisque enim, in gravida ligula dui at elit. Aenean eleifend tellus sit amet turpis consequat lacinia. Donec consectetur nulla vitae nulla pretium, rhoncus egestas nisl elementum
+As I pointed out at the beginning, one of the main goals of this project is to save money. As such, I needed to find a hosting provider that is completely free.
 
-## The Future
+My first choice was [Github Pages](https://pages.github.com/), because Nuxt.js allows you to build static pages thanks to `nuxt-generate`. However, it was too simple a solution, and after all, I wanted to enjoy the benefits of the tool I use. So I had to find some solution that would allow me to use SSR.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at condimentum massa. Phasellus efficitur, justo a hendrerit elementum, eros justo scelerisque enim, in gravida ligula dui at elit. Aenean eleifend tellus sit amet turpis consequat lacinia. Donec consectetur nulla vitae nulla pretium, rhoncus egestas nisl elementum
+My second choice was [Heroku](https://www.heroku.com/) because it allows me to serve Node.js applications. Unfortunately, this solution has several downsides and because of them I couldn't choose it for this project. First, Heroku in the free version with an unverified account only allows you to serve a few apps (5 to be exact), and at this point I already had a few apps served on Heroku. It goes to sleep after 30 minutes of inactivity and does not yet support HTTP 2.
+
+My third and best choice was [Vercel](https://vercel.com/), an open source serverless platform for static and hybrid applications. According to this, it can serve static sites but allows serverless functions. Again thanks to the Nuxt.js community, we can build an SSR application and serve it on Vercel using [vercel-builder](https://github.com/nuxt/vercel-builder). 
+
+In my opinion, using Vercel is very simple. It integrates with your Github account and allows you to select one (or all) repositories. It deploys the project to production every time you push it to the `master` or `main` branch. The great thing about Vercel is that it creates a preview environment for each pull request.
+
+## Summary
+
+I had a lot of fun creating this project and learned new tools like nuxt-content and Vercel. The best part is that this project is not fully finished yet and always won't be because I will always find some solution to make it better. 
+My goal now is to do my best to please Google Lighthouse and get the design ready for SEO.  I have some ideas for new blog posts and hope to write them regularly.
+
+This project is available on my [github](https://github.com/ddosdor/onemeaning.dev) so you can check it out.
+
+If you have any questions, feedback or suggestions about this site, feel free to reach out to me on [Twitter](https://twitter.com/ddosdor) or [LinkedIn](https://www.linkedin.com/in/sebastian-drzewicki-947459b0/).
