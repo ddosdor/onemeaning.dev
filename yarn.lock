@@ -1743,7 +1743,7 @@
     semver "7.3.5"
     ufo "^0.7.5"
 
-"@nuxtjs/web-vitals@0.1.4", "@nuxtjs/web-vitals@^0.1.4":
+"@nuxtjs/web-vitals@^0.1.4":
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/@nuxtjs/web-vitals/-/web-vitals-0.1.4.tgz#f7ecd908c7c6e42d3b9f2270267992ce6d7caeab"
   integrity sha512-//63OcBoOzXyv2G5EA32Z/gL3naQf6SIarin0coz+/wBimO2U38jRmAdHaao8bCMVasojoyg95sSdzu7Per4DQ==
