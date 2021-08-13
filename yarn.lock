@@ -1743,22 +1743,13 @@
     semver "7.3.5"
     ufo "^0.7.5"
 
-"@nuxtjs/web-vitals@^0.1.4":
+"@nuxtjs/web-vitals@0.1.4", "@nuxtjs/web-vitals@^0.1.4":
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/@nuxtjs/web-vitals/-/web-vitals-0.1.4.tgz#f7ecd908c7c6e42d3b9f2270267992ce6d7caeab"
   integrity sha512-//63OcBoOzXyv2G5EA32Z/gL3naQf6SIarin0coz+/wBimO2U38jRmAdHaao8bCMVasojoyg95sSdzu7Per4DQ==
   dependencies:
     defu "^3.2.2"
     web-vitals "^1.1.0"
-
-"@nuxtjs/web-vitals@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/web-vitals/-/web-vitals-0.1.7.tgz#66b3b16e68dfccca7054f57f7a6f806da7d2e32a"
-  integrity sha512-KCMAUIhud8pOf52/3K57osacrOk3ZUuwUd/I+crB5cEpOxz36PJaeNhDGGrc9PzwGlMWHSzcjnzUa0AI0CNDbg==
-  dependencies:
-    defu "^5.0.0"
-    ufo "^0.7.7"
-    web-vitals "^2.1.0"
 
 "@nuxtjs/youch@^4.2.3":
   version "4.2.3"
@@ -15129,11 +15120,6 @@ web-vitals@^1.1.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-1.1.2.tgz#06535308168986096239aa84716e68b4c6ae6d1c"
   integrity sha512-PFMKIY+bRSXlMxVAQ+m2aw9c/ioUYfDgrYot0YUa+/xa0sakubWhSDyxAKwzymvXVdF4CZI71g06W+mqhzu6ig==
-
-web-vitals@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-2.1.0.tgz#ebf5428875ab5bfc1056c2e80cd177001287de7b"
-  integrity sha512-npEyJP8jHf3J71t1tRTEtz9FeKp8H2udWJUUq5ykfPhhstr//TUxiYhIEzLNwk4zv2ybAilMn7v7N6Mxmuitmg==
 
 webidl-conversions@^5.0.0:
   version "5.0.0"
