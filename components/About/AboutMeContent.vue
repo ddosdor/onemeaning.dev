@@ -54,7 +54,7 @@
          data-aos-delay="300"
       >
         Over the past years, I've built from scratch and managed a development
-        team of several people, with full infrastructure administration, CD/CD processes
+        team of several people, with full infrastructure administration, CI/CD processes
         based on Gitlab and Docker, and a technology stack based on
         <RoughNotation :is-show="shouldAnimateRoughNotation"
                        type="box"
