@@ -2,17 +2,24 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 const flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette').default;
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
+  mode: 'jit',
   purge: [
     './components/**/*.{vue,js}',
     './layouts/**/*.vue',
     './pages/**/*.vue',
+    './content/**/*.md',
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
   ],
   darkMode: 'media',
-  theme: {},
+  theme: {
+    fontFamily: {
+      sans: ['Inter', ...defaultTheme.fontFamily.sans],
+    },
+  },
   variants: {
     extend: {
       opacity: ['disabled'],

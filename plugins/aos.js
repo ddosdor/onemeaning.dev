@@ -12,7 +12,7 @@ export default ({ app }) => {
   nuxtApp.AOS = new AOS.init({
     once: true,
     disable: false,
-    duration: 700,
+    duration: 500,
     offset: -50,
     easing: 'ease-out-cubic',
     startEvent: 'load',

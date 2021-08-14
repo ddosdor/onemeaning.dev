@@ -32,14 +32,14 @@
                         :avatar="post.author.avatar"
                         :name="post.author.name"
         />
-        <time class="text-sm text-gray-500">{{ formatedPublishPostDate }}</time>
+        <time class="text-sm text-gray-500">{{ formatDate(post.date) }}</time>
       </div>
       <h2 class="mt-4 flex">
         <a :href="post.path"
            class="PostPreviewListItem__title text-lg font-bold w-full
                   md:text-xl
                  "
-        >{{ post.title }}</a>
+        >{{ post.title }} {{ post.isDraft ? '[draft]' : '' }}</a>
       </h2>
       <p v-if="post.excerpt"
          class="mt-2 line-clamp-3"
@@ -52,8 +52,8 @@
 
 <script lang="ts">
 import { defineComponent, computed, PropType } from '@nuxtjs/composition-api';
-import { DateTimeFormatOptions } from '@/index.d';
 import { BlogPostType } from '@/utils/types';
+import { useHelpers } from '@/composables/useHelpers';
 
 export default defineComponent({
   name: 'PostPreview',
@@ -68,22 +68,11 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const { post } = props;
+    const { formatDate } = useHelpers();
     const position = computed<String>(() => ((props.index % 2 === 0) ? 'even' : 'odd'));
 
-    const formatedPublishPostDate = computed(() => {
-      const dateFormat = new Date(post.date);
-      const options: DateTimeFormatOptions = {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      };
-
-      return dateFormat.toLocaleDateString('en-US', options);
-    });
-
     return {
-      formatedPublishPostDate, position,
+      formatDate, position,
     };
   },
 });

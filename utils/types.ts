@@ -13,7 +13,7 @@ export type PostAuthor = {
 }
 
 export type BlogPostType = {
-  [key: string]: string | string[] | undefined | PostAuthor
+  [key: string]: string | string[] | undefined | PostAuthor | boolean
   title: string
   thumbnail: string
   date: string,
@@ -21,6 +21,7 @@ export type BlogPostType = {
   tags?: string[]
   path: string
   author: PostAuthor
+  isDraft: boolean
 }
 
 export type NpmPackageParams = {

@@ -14,6 +14,7 @@
               type="image/webp"
       >
       <img :class="customClass"
+           class="mx-auto"
            :src="src"
            :srcset="srcSet"
            v-bind="$attrs"

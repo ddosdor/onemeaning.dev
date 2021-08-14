@@ -1,15 +1,26 @@
-*
-  @apply text-gray-800 font-normal subpixel-antialiased
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&display=fallback')
+  
 html
-  scroll-behavior: smooth
   @apply leading-7
+
+body
+  @apply text-gray-700 font-normal subpixel-antialiased
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  @apply text-gray-800 tracking-tighter
 
 .app-link 
   &:hover
     color: $link-color
   @apply cursor-pointer transition duration-100
-  @apply font-semibold
+
+.app-dot-divider
+  @apply rounded-full w-1 h-1 bg-gray-300
 
 /* AOS animation */
 [data-aos='zoom-y-in']

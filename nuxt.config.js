@@ -1,6 +1,8 @@
 import * as path from 'path';
+import highlightjs from 'highlight.js';
 
 const resolve = (dir) => path.join(__dirname, dir);
+const wrap = (code, lang) => `<pre><code class="hljs ${lang}">${code}</code></pre>`;
 
 export default {
   ssr: true,
@@ -26,6 +28,7 @@ export default {
   css: [
     '~/assets/style/variables.sass',
     '~/assets/style/style.sass',
+    'highlight.js/styles/atom-one-dark.css',
   ],
   optimizedImages: {
     optimizeImages: true,
@@ -64,6 +67,16 @@ export default {
       const { $content } = require('@nuxt/content');
       const blog = await $content('blog').fetch();
       return blog.map((file) => (file.path === '/index' ? '/' : file.path));
+    },
+  },
+  content: {
+    markdown: {
+      highlighter(rawCode, lang) {
+        if (!lang) {
+          return wrap(highlightjs.highlightAuto(rawCode).value, lang);
+        }
+        return wrap(highlightjs.highlight(lang, rawCode).value, lang);
+      },
     },
   },
 };
