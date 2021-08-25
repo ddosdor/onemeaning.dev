@@ -1,8 +1,8 @@
 ---
 isDraft: true
-title: Dont do that! Vue antipatterns
+title: One App vs Different Frameworks - Assumptions & API (part 1)
 date: 2020-05-25T20:47:18
-thumbnail: images/blog/thumbnails/how_i_build_my_blog.png
+thumbnail: images/blog/thumbnails/one_app_vs_different_frameworks_part_1.png
 author:
   avatar: images/blog/avatars/me_avatar.png
   name: Sebastian
