@@ -56,6 +56,7 @@ export default {
   },
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID,
+    dev: false,
   },
   plugins: [
     '~/plugins/vue-rough-notation.js',
