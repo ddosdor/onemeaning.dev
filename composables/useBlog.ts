@@ -1,23 +1,18 @@
+/* eslint-disable no-unused-vars */
 import {
   ref, computed, ComputedRef, useContext,
 } from '@nuxtjs/composition-api';
-import { BlogPostType, IContentDocument } from '@/utils/types';
+import { BlogPostType } from '@/utils/types';
 import { POSTS_LIST_LIMIT_PER_PAGE, RECENT_POSTS_LIST_LIMIT } from '@/utils/consts';
 import { useAppEnvironment } from '@/composables/useAppEnvironment';
 
 interface UseBlogComposable {
   getRecentPosts(): Promise<void>
   getPosts(): Promise<void>
-  recentPosts: ComputedRef<
-    (BlogPostType & IContentDocument) |
-    (BlogPostType & IContentDocument)[] |
-    null
-  >
-  posts: ComputedRef<
-    (BlogPostType & IContentDocument) |
-    (BlogPostType & IContentDocument)[] |
-    null
-  >
+  getPost(slug: string): Promise<void>
+  recentPosts: ComputedRef<BlogPostType[] | null>
+  posts: ComputedRef<BlogPostType[] | null>
+  post: ComputedRef<BlogPostType | undefined>
   isLoadingRecentPosts: ComputedRef<Boolean>
   isRecentPostsEmpty: ComputedRef<Boolean>
   isLoadingPosts: ComputedRef<Boolean>
@@ -25,21 +20,18 @@ interface UseBlogComposable {
   postsHasNextPage: ComputedRef<Boolean>
 }
 
-const recentPosts = ref<(BlogPostType & IContentDocument) |
-                        (BlogPostType & IContentDocument)[] |
-                        null>([]);
-const posts = ref<(BlogPostType & IContentDocument) |
-                  (BlogPostType & IContentDocument)[] |
-                  null>([]);
+const recentPosts = ref<BlogPostType[]>([]);
+const posts = ref<BlogPostType[]>([]);
+const post = ref<BlogPostType>();
 const isLoadingRecentPosts = ref<Boolean>(false);
 const isRecentPostsEmpty = computed(() => recentPosts.value?.length === 0);
 const isLoadingPosts = ref<Boolean>(false);
 const isPostsEmpty = computed(() => posts.value?.length === 0);
 const postsHasNextPage = computed(() => posts.value?.length === POSTS_LIST_LIMIT_PER_PAGE);
 
-function includePostAccordingToAppEnvironment(post: BlogPostType): boolean {
+function includePostAccordingToAppEnvironment(fetchedPost: BlogPostType): boolean {
   const { isDev } = useAppEnvironment();
-  return isDev || !post.isDraft;
+  return isDev || !fetchedPost.isDraft;
 }
 
 export const useBlog = (): UseBlogComposable => {
@@ -80,11 +72,18 @@ export const useBlog = (): UseBlogComposable => {
     isLoadingPosts.value = false;
   };
 
+  const getPost = async (slug: string): Promise<void> => {
+    const document = (await $content('blog', slug).fetch<BlogPostType>()) as BlogPostType;
+    post.value = document;
+  };
+
   return {
     getRecentPosts,
     getPosts,
+    getPost,
     recentPosts: computed(() => recentPosts.value),
     posts: computed(() => posts.value),
+    post: computed(() => post.value),
     isLoadingRecentPosts: computed(() => isLoadingRecentPosts.value),
     isRecentPostsEmpty,
     isLoadingPosts: computed(() => isLoadingPosts.value),

@@ -19,6 +19,7 @@ export default defineComponent({
   name: 'RecentProjectsList',
   setup() {
     const { recentProjects, getRecentProjects } = useProjects();
+
     getRecentProjects();
 
     return { recentProjects };

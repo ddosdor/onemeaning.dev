@@ -24,6 +24,7 @@ export default defineComponent({
   },
   setup() {
     const { recentPosts, getRecentPosts } = useBlog();
+
     getRecentPosts();
 
     return { recentPosts };
