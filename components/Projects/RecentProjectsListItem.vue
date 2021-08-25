@@ -7,7 +7,7 @@
         <li>
           <a :href="recentProject.github.link"
              target="__blank"
-             name="Go to github repository"
+             aria-label="Go to github repository"
           >
             <SharedUiSocialIcon github />
           </a>
@@ -15,7 +15,7 @@
         <li>
           <a :href="recentProject.npm.link"
              target="__blank"
-             name="Go to node package"
+             aria-label="Go to node package"
           >
             <SharedUiSocialIcon npm />
           </a>
