@@ -56,19 +56,19 @@
       >
         <a :href="twitter"
            target="__blank"
-           name="Go to Twitter account"
+           aria-label="Go to Twitter account"
         >
           <SharedUiSocialIcon twitter />
         </a>
         <a :href="linkedin"
            target="__blank"
-           name="Go to LinkedIn account"
+           aria-label="Go to LinkedIn account"
         >
           <SharedUiSocialIcon linkedin />
         </a>
         <a :href="github"
            target="__blank"
-           name="Go to Github account"
+           aria-label="Go to Github account"
         >
           <SharedUiSocialIcon github />
         </a>
