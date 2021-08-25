@@ -30,7 +30,7 @@
 
 <script lang="ts">
 import {
-  defineComponent, useContext, ref, computed, watch, onMounted, useAsync,
+  defineComponent, useContext, ref, computed, watch, onMounted,
 } from '@nuxtjs/composition-api';
 
 import { useBlog } from '@/composables/useBlog';
@@ -45,7 +45,7 @@ export default defineComponent({
 
     watch(
       () => query.value?.page,
-      () => useAsync(() => getPosts()),
+      () => getPosts(),
       { immediate: true },
     );
 
