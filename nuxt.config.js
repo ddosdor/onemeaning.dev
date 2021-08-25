@@ -5,8 +5,8 @@ const resolve = (dir) => path.join(__dirname, dir);
 const wrap = (code, lang) => `<pre><code class="hljs ${lang}">${code}</code></pre>`;
 
 export default {
-  ssr: false,
-  target: 'server',
+  ssr: true,
+  target: 'static',
   router: {
     base: '/',
   },
