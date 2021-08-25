@@ -1,7 +1,7 @@
 ---
 isDraft: false
 title: How and why I built my blog with Nuxt.js
-date: 2020-05-25T20:47:18
+date: 2021-07-01T14:47:18
 thumbnail: images/blog/thumbnails/how_i_build_my_blog.png
 author:
   avatar: images/blog/avatars/me_avatar.png
