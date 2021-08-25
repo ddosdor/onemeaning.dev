@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import { defineComponent, useAsync } from '@nuxtjs/composition-api';
 
 import { useProjects } from '@/composables/useProjects';
 
@@ -19,7 +19,8 @@ export default defineComponent({
   name: 'RecentProjectsList',
   setup() {
     const { recentProjects, getRecentProjects } = useProjects();
-    getRecentProjects();
+
+    useAsync(() => getRecentProjects());
 
     return { recentProjects };
   },

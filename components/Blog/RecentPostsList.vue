@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import { defineComponent, useAsync } from '@nuxtjs/composition-api';
 
 import { useBlog } from '@/composables/useBlog';
 
@@ -24,7 +24,8 @@ export default defineComponent({
   },
   setup() {
     const { recentPosts, getRecentPosts } = useBlog();
-    getRecentPosts();
+
+    useAsync(() => getRecentPosts());
 
     return { recentPosts };
   },
