@@ -6,7 +6,7 @@ const wrap = (code, lang) => `<pre><code class="hljs ${lang}">${code}</code></pr
 
 export default {
   ssr: true,
-  target: 'static',
+  target: 'server',
   router: {
     base: '/',
   },
@@ -77,14 +77,6 @@ export default {
       config.resolve.alias['@$'] = resolve('');
       // eslint-disable-next-line no-param-reassign
       config.resolve.extensions = ['.js', '.ts', '.vue', '.json'];
-    },
-  },
-  generate: {
-    async routes() {
-      // eslint-disable-next-line global-require
-      const { $content } = require('@nuxt/content');
-      const blog = await $content('blog').fetch();
-      return blog.map((file) => (file.path === '/index' ? '/' : file.path));
     },
   },
   content: {
