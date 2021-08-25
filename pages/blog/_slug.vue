@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article v-if="post">
     <div class="lg:px-20">
       <SharedUiPageHeader main
                           :title="post.title"
@@ -36,20 +36,38 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import {
+  computed, defineComponent, useContext, useAsync, useMeta,
+} from '@nuxtjs/composition-api';
 import { useHelpers } from '@/composables/useHelpers';
+import { useBlog } from '@/composables/useBlog';
 
 export default defineComponent({
   setup() {
     const { formatDate } = useHelpers();
+    const { params } = useContext();
+    const { post, getPost } = useBlog();
+
+    useAsync(() => getPost(params.value.slug));
+
+    const title = computed(() => post.value?.title);
+    const description = computed(() => post.value?.description);
+
+    useMeta(() => ({
+      title: title.value,
+      meta: [{
+        hid: 'description',
+        name: 'description',
+        content: description.value as string,
+      }],
+    }));
+
     return {
+      post,
       formatDate,
     };
   },
-  async asyncData({ $content, params }) {
-    const post = await $content('blog', params.slug).fetch();
-    return { post };
-  },
+  head: {},
 });
 </script>
 
