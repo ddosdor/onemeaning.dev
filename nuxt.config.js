@@ -6,7 +6,7 @@ const wrap = (code, lang) => `<pre><code class="hljs ${lang}">${code}</code></pr
 
 export default {
   ssr: true,
-  target: 'static',
+  target: 'server',
   router: {
     base: '/',
   },

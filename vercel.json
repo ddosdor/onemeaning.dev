@@ -9,7 +9,8 @@
           ".nuxt/content/**",
           "content/**"
         ],
-        "internalServer": true
+        "internalServer": true,
+        "generateStaticRoutes": true
       }      
     }
   ]
