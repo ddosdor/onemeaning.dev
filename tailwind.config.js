@@ -28,6 +28,7 @@ module.exports = {
   plugins: [
     require('@tailwindcss/line-clamp'),
     ({
+      // eslint-disable-next-line no-unused-vars
       addUtilities, e, theme, variants,
     }) => {
       const colors = flattenColorPalette(theme('borderColor'));
