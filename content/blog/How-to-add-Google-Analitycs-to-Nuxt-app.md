@@ -25,14 +25,53 @@ I decided to use the vue-gtag solution as a plugin for my nuxt.js application.
 
 Adding vue-gtag to Nuxt.js as a plugin is very simple. The first step is to install the npm package:
 
-```
+```sh
 yarn add vue-gtag
 ```
 
-or (if You use npm):
+or (if you use npm):
 
-```
+```sh
 npm install vue-gtag
 ```
 
+Next, we create a folder named *plugins* and a file where we add the **`vue-gtag`** plugin. I always name the file after the plugin name, so in this case I created a file named `vue-gtag.js`
 
+```js
+import Vue from 'vue';
+import VueGtag from 'vue-gtag';
+
+export default ({ app }) => {
+  Vue.use(VueGtag, {
+    config: {
+      id: process.env.GA_MEASUREMENT_ID,
+    },
+    bootstrap: true,
+    appName: process.env.APP_NAME,
+    enabled: true,
+    pageTrackerScreenviewEnabled: true,
+  }, app.router);
+};
+```
+
+Since I want to use screenview to associate tracking information with the specific page the user is viewing, I enabled the *'pageTrackerScreenviewEnabled'* options and passed the **`vue-router`** instance to the **`vue-gtag`** plugin.
+
+The last step is to add the created plugin to *nuxt-config.js* file. This plugin is only supposed to work on the client side, so since I'm using SSR fully, I had to mark it up.
+
+```js
+export default {
+  ...
+  plugins: [
+    { src: '~/plugins/vue-gtag.js', mode: 'client' },
+  ]
+  ...
+}
+```
+
+That's basically enough to add Google Analytics to your Nuxt.js app, but these days we can't just add analytics and forget about user privacy. So I had to do a little more work to comply with GDPR and other regulations.
+
+## GDPR and EU cookie compliance
+
+When you add Google Analytics to your site, Google places cookies in the browser to track users in a unique way. Accordingly, I had to do three things to make sure I was compliant with [PECR](https://seersco.com/articles/what-is-pecr-privacy/), [GDPR](https://gdpr-info.eu/) and other similar regulations, as well as Google's [terms](https://marketingplatform.google.com/about/analytics/terms/us/) and conditions.
+
+### Privacy policy page

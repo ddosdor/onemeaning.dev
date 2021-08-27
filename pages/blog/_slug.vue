@@ -93,9 +93,6 @@ export default defineComponent({
   p
     @apply my-6
 
-  .hljs
-    @apply p-2 text-sm
-
   a
     color: $link-color
     @aaply transition-colors duration-200
@@ -103,9 +100,10 @@ export default defineComponent({
     &:hover
       color: darken($link-color, 20%)
 
-  code
-    @apply inline-block p-1 bg-gray-100 text-sm
-
   blockquote
     @apply bg-gray-100 border-l-8 border-gray-400 pl-4 font-light pr-3
+
+  .hljs
+    @apply text-sm rounded-md
+
 </style>

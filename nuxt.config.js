@@ -57,6 +57,7 @@ export default {
   plugins: [
     '~/plugins/vue-rough-notation.js',
     { src: '~/plugins/aos.js', mode: 'client' },
+    { src: '~/plugins/vue-gtag.js', mode: 'client' },
   ],
   components: true,
   buildModules: [
