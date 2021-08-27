@@ -105,4 +105,7 @@ export default defineComponent({
 
   code
     @apply inline-block p-1 bg-gray-100 text-sm
+
+  blockquote
+    @apply bg-gray-100 border-l-8 border-gray-400 pl-4 font-light pr-3
 </style>
