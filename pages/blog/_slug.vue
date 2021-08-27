@@ -37,7 +37,7 @@
 
 <script lang="ts">
 import {
-  computed, defineComponent, useContext, useAsync, useMeta,
+  computed, defineComponent, useContext, useMeta,
 } from '@nuxtjs/composition-api';
 import { useHelpers } from '@/composables/useHelpers';
 import { useBlog } from '@/composables/useBlog';
@@ -48,7 +48,7 @@ export default defineComponent({
     const { params } = useContext();
     const { post, getPost } = useBlog();
 
-    useAsync(() => getPost(params.value.slug));
+    getPost(params.value.slug);
 
     const title = computed(() => post.value?.title);
     const description = computed(() => post.value?.description);
