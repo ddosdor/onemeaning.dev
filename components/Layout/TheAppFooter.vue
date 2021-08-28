@@ -10,6 +10,13 @@
       <span class="text-gray-300 text-xs">Made with Nuxt.js and TailwindCSS
         <span class="text-red-600">&#9829;</span>
       </span>
+      <nuxt-link class="text-gray-300 app-link uppercase text-sm font-light mt-4
+                         md:mt-0 md:ml-auto
+                       "
+                 to="/privacy-policy"
+      >
+        Privacy Policy
+      </nuxt-link>
       <ul class="list-none flex space-x-5 mt-8
                  md:mt-0 md:ml-auto
                 "

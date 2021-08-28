@@ -75,3 +75,5 @@ That's basically enough to add Google Analytics to your Nuxt.js app, but these d
 When you add Google Analytics to your site, Google places cookies in the browser to track users in a unique way. Accordingly, I had to do three things to make sure I was compliant with [PECR](https://seersco.com/articles/what-is-pecr-privacy/), [GDPR](https://gdpr-info.eu/) and other similar regulations, as well as Google's [terms](https://marketingplatform.google.com/about/analytics/terms/us/) and conditions.
 
 ### Privacy policy page
+
+The first thing I need to do is create a new privacy policy page where I explain why I use Google Analytics, what cookies are, and how Google Analytics uses cookies to collect information. I also had to add information on how to delete cookies and a link to a [Google article](https://policies.google.com/technologies/partner-sites) on privacy and how to protect it. The page is available here.
