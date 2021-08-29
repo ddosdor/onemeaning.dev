@@ -32,6 +32,8 @@
         />
       </div>
     </div>
+
+    <BlogBannerAfterPostReading data-aos="zoom-y-in" />
   </article>
 </template>
 

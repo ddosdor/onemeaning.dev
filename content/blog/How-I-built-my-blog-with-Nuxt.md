@@ -80,5 +80,3 @@ I had a lot of fun creating this project and learned new tools like nuxt-content
 My goal now is to do my best to please Google Lighthouse and get the design ready for SEO.  I have some ideas for new blog posts and hope to write them regularly.
 
 This project is available on my [github](https://github.com/ddosdor/onemeaning.dev) so you can check it out.
-
-If you have any questions, feedback or suggestions about this site, feel free to reach out to me on [Twitter](https://twitter.com/ddosdor) or [LinkedIn](https://www.linkedin.com/in/sebastian-drzewicki-947459b0/).
