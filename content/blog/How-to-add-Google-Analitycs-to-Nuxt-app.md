@@ -1,7 +1,7 @@
 ---
-isDraft: true
+isDraft: false
 title: How to add Google Analytics to Nuxt App
-date: 2020-05-25T20:47:18
+date: 2021-08-29T10:37:18
 thumbnail: images/blog/thumbnails/how_to_add_google_analytics_to_nuxt_app.png
 author:
   avatar: images/blog/avatars/me_avatar.png
