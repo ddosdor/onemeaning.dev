@@ -6,7 +6,7 @@
       <ul class="list-none flex space-x-3">
         <li>
           <a :href="recentProject.github.link"
-             target="__blank"
+             target="_blank"
              aria-label="Go to github repository"
           >
             <SharedUiSocialIcon github />
@@ -14,7 +14,7 @@
         </li>
         <li>
           <a :href="recentProject.npm.link"
-             target="__blank"
+             target="_blank"
              aria-label="Go to node package"
           >
             <SharedUiSocialIcon npm />
@@ -31,7 +31,7 @@
     <a v-if="recentProject"
        class="RecentProjectsListItem pt-4 min-w-full min-h-full"
        :href="recentProject.github.link"
-       target="__blank"
+       target="_blank"
     >
       <h2 class="RecentProjectsListItem__title text-xl font-semibold line-clamp-1">
         {{ recentProject.title }}

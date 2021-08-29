@@ -10,27 +10,34 @@
       <span class="text-gray-300 text-xs">Made with Nuxt.js and TailwindCSS
         <span class="text-red-600">&#9829;</span>
       </span>
+      <nuxt-link class="text-gray-300 app-link uppercase text-sm font-light mt-4
+                         md:mt-0 md:ml-auto
+                       "
+                 to="/privacy-policy"
+      >
+        Privacy Policy
+      </nuxt-link>
       <ul class="list-none flex space-x-5 mt-8
                  md:mt-0 md:ml-auto
                 "
       >
         <li>
           <a :href="twitter"
-             target="__blank"
+             target="_blank"
              class="text-gray-300 app-link"
              name="Go to Twitter account"
           >Twitter</a>
         </li>
         <li>
           <a :href="linkedin"
-             target="__blank"
+             target="_blank"
              class="text-gray-300 app-link"
              name="go to LinkedIn account"
           >LinkedIn</a>
         </li>
         <li>
           <a :href="github"
-             target="__blank"
+             target="_blank"
              class="text-gray-300 app-link"
              name="Go to Github account"
           >Github</a>

@@ -75,10 +75,10 @@
       >
         Let's hang out on <a class="font-bold app-link"
                              :href="linkedin"
-                             tagret="__blank"
+                             tagret="_blank"
         >LinkedIn</a> or <a class="font-bold app-link"
                             :href="twitter"
-                            target="__blank"
+                            target="_blank"
         >Twitter</a>.
       </p>
     </div>

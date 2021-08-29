@@ -54,13 +54,10 @@ export default {
   styleResources: {
     sass: ['~/assets/style/variables.sass'],
   },
-  googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID,
-    dev: false,
-  },
   plugins: [
     '~/plugins/vue-rough-notation.js',
     { src: '~/plugins/aos.js', mode: 'client' },
+    { src: '~/plugins/vue-gtag.js', mode: 'client' },
   ],
   components: true,
   buildModules: [
@@ -71,7 +68,6 @@ export default {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/composition-api/module',
-    '@nuxtjs/google-analytics',
   ],
   modules: [
     '@nuxt/content',
