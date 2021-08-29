@@ -2,7 +2,6 @@
   <SharedUiPageSection>
     <SharedUiPageHeader main
                         title="Privacy Policy"
-                        data-aos="zoom-y-in"
     />
     <h2 class="mt-12 mb-6 text-lg font-semibold">
       Cookies

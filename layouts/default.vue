@@ -5,6 +5,9 @@
       <Nuxt />
     </LayoutTheAppContent>
     <LayoutTheAppFooter />
+    <client-only>
+      <SharedCookieBanner />
+    </client-only>
   </div>
 </template>
 

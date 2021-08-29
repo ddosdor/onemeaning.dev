@@ -23,3 +23,7 @@ export const GITHUB_API = 'https://api.github.com/repos';
 export const NPM_API = 'https://api.npmjs.org';
 
 export const ENVIRONMENT = process.env.NODE_ENV;
+
+export const BROWSER_STORAGE_KEYS = {
+  GPDRisAccepted: 'GPDRisAccepted',
+};
