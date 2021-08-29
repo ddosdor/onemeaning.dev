@@ -59,6 +59,10 @@ export default {
     { src: '~/plugins/aos.js', mode: 'client' },
     { src: '~/plugins/vue-gtag.js', mode: 'client' },
   ],
+  publicRuntimeConfig: {
+    APP_NAME: process.env.APP_NAME,
+    GA_MEASUREMENT_ID: process.env.GA_MEASUREMENT_ID,
+  },
   components: true,
   buildModules: [
     '@nuxtjs/style-resources',
