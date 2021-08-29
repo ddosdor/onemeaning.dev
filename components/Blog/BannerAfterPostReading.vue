@@ -6,18 +6,18 @@
     <p class="mt-2">
       If you have any questions, feedback or suggestions about this site,
       feel free to reach out to me on           <a :href="twitter"
-                                                   target="__blank"
+                                                   target="_blank"
                                                    class="font-semibold app-link"
                                                    name="Go to Twitter account"
       >Twitter</a> or           <a :href="linkedin"
-                                   target="__blank"
+                                   target="_blank"
                                    class="font-semibold app-link"
                                    name="go to LinkedIn account"
       >LinkedIn</a>
     </p>
     <div class="w-full flex justify-center mt-6">
       <a :href="github"
-         target="__blank"
+         target="_blank"
          aria-label="Go to Github account"
       >
         <SharedUiSocialIcon github />

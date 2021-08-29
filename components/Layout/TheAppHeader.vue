@@ -55,19 +55,19 @@
                  "
       >
         <a :href="twitter"
-           target="__blank"
+           target="_blank"
            aria-label="Go to Twitter account"
         >
           <SharedUiSocialIcon twitter />
         </a>
         <a :href="linkedin"
-           target="__blank"
+           target="_blank"
            aria-label="Go to LinkedIn account"
         >
           <SharedUiSocialIcon linkedin />
         </a>
         <a :href="github"
-           target="__blank"
+           target="_blank"
            aria-label="Go to Github account"
         >
           <SharedUiSocialIcon github />
