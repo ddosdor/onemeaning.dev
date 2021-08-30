@@ -11,7 +11,7 @@ export default {
     base: '/',
   },
   head: {
-    title: 'onemeaning.dev - Sebastian personal blog',
+    title: 'onemeaning.dev - Sebastian Drzewicki',
     htmlAttrs: {
       lang: 'en',
     },
@@ -20,7 +20,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description', name: 'description', content: `
-        Hi there, I'm Sebastian and fod about couple of years I work as a Software Developer (specifically with Javascript).
+        Hi there, I'm Sebastian and for about couple of years I work as a Software Developer (specifically with Javascript).
         This is my personal blog where I share what I enjoy, 
         experiment with new tools and keep notes on what I had already learned.
       `,
