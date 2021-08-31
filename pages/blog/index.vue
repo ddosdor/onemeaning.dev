@@ -39,7 +39,9 @@ import { POSTS_LIST_LIMIT_PER_PAGE } from '@/utils/consts';
 export default defineComponent({
   setup() {
     const { query } = useContext();
-    const { getPosts, posts, isLoading, isEmpty } = usePosts();
+    const {
+      getPosts, posts, isLoading, isEmpty,
+    } = usePosts();
     const fakeLoading = ref<Boolean>(false);
 
     watch(
