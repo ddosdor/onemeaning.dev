@@ -1,43 +1,44 @@
+/* eslint-disable no-unused-vars */
 import {
   ref, computed, ComputedRef, useContext,
 } from '@nuxtjs/composition-api';
 import { ProjectPostType } from '@/utils/types';
-import { RECENT_PROJECTS_LIST_LIMIT } from '@/utils/consts';
 
-interface UseProjectsComposable {
-  getRecentProjects(): Promise<void>
-  recentProjects: ComputedRef<ProjectPostType[] | null>
-  isLoadingRecentProjects: ComputedRef<Boolean>
-  isRecentProjectsEmpty: ComputedRef<Boolean>
+export type GetProjectsOptions = {
+  limit: number
 }
 
-const recentProjects = ref<ProjectPostType[]>([]);
-const isLoadingRecentProjects = ref<Boolean>(false);
-const isRecentProjectsEmpty = computed(() => recentProjects.value?.length === 0);
+export type UseProjectsComposableReturn = {
+  getProjects(options: GetProjectsOptions): Promise<void>
+  projects: ComputedRef<ProjectPostType[] | null>
+  isLoading: ComputedRef<Boolean>
+  isEmpty: ComputedRef<Boolean>
+}
 
-export const useProjects = (): UseProjectsComposable => {
+export function useProjects(): UseProjectsComposableReturn {
   const { $content } = useContext();
 
+  const projects = ref<ProjectPostType[]>([]);
+  const isLoading = ref<Boolean>(false);
+
   /**
-   * Get recent projects list from 'projects' content sorted by priority.\
-   * List will be available in `recentProijects` reactive property
+   * Get projects list from 'projects' content sorted by priority.\
+   * List will be available in `projects` reactive property
    */
-  const getRecentProjects = async (): Promise<void> => {
-    if (isRecentProjectsEmpty.value) {
-      isLoadingRecentProjects.value = true;
-      recentProjects.value = (await $content('projects')
-        .only(['title', 'npm', 'github', 'description', 'path'])
-        .sortBy('priority', 'asc')
-        .limit(RECENT_PROJECTS_LIST_LIMIT)
-        .fetch<ProjectPostType>()) as Array<ProjectPostType>;
-      isLoadingRecentProjects.value = false;
-    }
-  };
+  async function getProjects(options: GetProjectsOptions): Promise<void> {
+    isLoading.value = true;
+    projects.value = (await $content('projects')
+      .only(['title', 'npm', 'github', 'description', 'path'])
+      .sortBy('priority', 'asc')
+      .limit(options.limit)
+      .fetch<ProjectPostType>()) as Array<ProjectPostType>;
+    isLoading.value = false;
+  }
 
   return {
-    getRecentProjects,
-    recentProjects: computed(() => recentProjects.value),
-    isLoadingRecentProjects: computed(() => isLoadingRecentProjects.value),
-    isRecentProjectsEmpty,
+    getProjects,
+    projects: computed(() => projects.value),
+    isLoading: computed(() => isLoading.value),
+    isEmpty: computed(() => projects.value?.length === 0),
   };
-};
+}

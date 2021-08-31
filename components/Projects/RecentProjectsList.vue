@@ -14,13 +14,14 @@
 import { defineComponent } from '@nuxtjs/composition-api';
 
 import { useProjects } from '@/composables/useProjects';
+import { RECENT_PROJECTS_LIST_LIMIT } from '@/utils/consts';
 
 export default defineComponent({
   name: 'RecentProjectsList',
   setup() {
-    const { recentProjects, getRecentProjects } = useProjects();
+    const { projects: recentProjects, getProjects } = useProjects();
 
-    getRecentProjects();
+    getProjects({ limit: RECENT_PROJECTS_LIST_LIMIT });
 
     return { recentProjects };
   },

@@ -3,11 +3,11 @@ import { ref, useFetch, Ref } from '@nuxtjs/composition-api';
 import { GITHUB_API } from '@/utils/consts';
 import { GithubRepositoryParams } from '@/utils/types';
 
-interface UseGithubInfoComposable {
+export type UseGithubInfoComposableReturn = {
   stars: Ref<Number>
 }
 
-export const useGithubInfo = (params: GithubRepositoryParams): UseGithubInfoComposable => {
+export function useGithubInfo(params: GithubRepositoryParams): UseGithubInfoComposableReturn {
   const stars = ref<Number>(0);
 
   useFetch(async () => {

@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 import { DateTimeFormatOptions } from '@/index.d';
 
-interface UseHelpers {
+interface UseHelpersComposableReturn {
   formatDate(date: string): String
 }
 
-export const useHelpers = (): UseHelpers => {
+export function useHelpers(): UseHelpersComposableReturn {
   function formatDate(date: string) {
     const dateFormat = new Date(date);
     const options: DateTimeFormatOptions = {
