@@ -1,11 +1,11 @@
 import { ENVIRONMENT } from '@/utils/consts';
 
-interface UseAppEnvironemnt {
+export type UseAppEnvironemntComposableReturn = {
   currentEnviroment: string | undefined
   isDev: boolean
 }
 
-export const useAppEnvironment = (): UseAppEnvironemnt => {
+export function useAppEnvironment(): UseAppEnvironemntComposableReturn {
   const currentEnviroment = ENVIRONMENT;
   const isDev = currentEnviroment === 'development';
 

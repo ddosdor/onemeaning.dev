@@ -42,19 +42,19 @@ import {
   computed, defineComponent, useContext, useMeta,
 } from '@nuxtjs/composition-api';
 import { useHelpers } from '@/composables/useHelpers';
-import { useBlog } from '@/composables/useBlog';
+import { usePost } from '@/composables/usePost';
 
 export default defineComponent({
   setup() {
     const { formatDate } = useHelpers();
     const { params } = useContext();
-    const { post, getPost } = useBlog();
+    const { post, getPost } = usePost();
+    const { slug } = params.value;
 
-    getPost(params.value.slug);
+    getPost(slug);
 
     const title = computed(() => post.value?.title);
     const description = computed(() => post.value?.description);
-
     useMeta(() => ({
       title: title.value,
       meta: [{

@@ -3,11 +3,11 @@ import { ref, useFetch, Ref } from '@nuxtjs/composition-api';
 import { NPM_API } from '@/utils/consts';
 import { NpmPackageParams } from '@/utils/types';
 
-interface UseNpmWeeklyDownloads {
+interface UseNpmWeeklyDownloadsComposableReturn {
   weeklyDownloads: Ref<Number>
 }
 
-export const useNpmWeeklyDownloads = (params: NpmPackageParams): UseNpmWeeklyDownloads => {
+export function useNpmWeeklyDownloads(params: NpmPackageParams): UseNpmWeeklyDownloadsComposableReturn {
   const weeklyDownloads = ref<Number>(0);
 
   useFetch(async () => {
@@ -19,4 +19,4 @@ export const useNpmWeeklyDownloads = (params: NpmPackageParams): UseNpmWeeklyDow
   return {
     weeklyDownloads,
   };
-};
+}

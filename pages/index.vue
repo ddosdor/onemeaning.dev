@@ -31,13 +31,13 @@
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
 
-import { useBlog } from '@/composables/useBlog';
+import { usePosts } from '@/composables/usePosts';
 import { useProjects } from '@/composables/useProjects';
 
 export default defineComponent({
   setup() {
-    const { isLoadingRecentPosts } = useBlog();
-    const { isLoadingRecentProjects } = useProjects();
+    const { isLoading: isLoadingRecentPosts } = usePosts();
+    const { isLoading: isLoadingRecentProjects } = useProjects();
     return { isLoadingRecentPosts, isLoadingRecentProjects };
   },
 });

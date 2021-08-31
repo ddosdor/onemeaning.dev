@@ -3,29 +3,25 @@
               md:grid-cols-2
              "
   >
-    <RecentPostsListItem v-for="(recentPost, index) in recentPosts"
-                         :key="`recent-post-${index}`"
-                         :recent-post="recentPost"
+    <BlogRecentPostsListItem v-for="(recentPost, index) in recentPosts"
+                             :key="`recent-post-${index}`"
+                             :recent-post="recentPost"
     />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
+import { usePosts } from '@/composables/usePosts';
 
-import { useBlog } from '@/composables/useBlog';
-
-import RecentPostsListItem from './RecentPostsListItem.vue';
+import { RECENT_POSTS_LIST_LIMIT } from '@/utils/consts';
 
 export default defineComponent({
   name: 'RecentPostsList',
-  components: {
-    RecentPostsListItem,
-  },
   setup() {
-    const { recentPosts, getRecentPosts } = useBlog();
+    const { getPosts, posts: recentPosts } = usePosts();
 
-    getRecentPosts();
+    getPosts({ limit: RECENT_POSTS_LIST_LIMIT });
 
     return { recentPosts };
   },

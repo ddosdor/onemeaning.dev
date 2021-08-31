@@ -13,13 +13,13 @@
           <template #skeleton>
             <BlogPostsPreviewListSkeleton />
           </template>
-          <LazyBlogPostsPreviewList v-if="!isPostsEmpty"
+          <LazyBlogPostsPreviewList v-if="!isEmpty"
                                     :key="isLoading"
                                     :posts-list="posts"
           />
-          <LazyBlogPostsPreviewListEmpty v-if="!isLoading && isPostsEmpty" />
-          <LazySharedUiPagination v-if="!isPostsEmpty"
-                                  :has-next-page="postsHasNextPage"
+          <LazyBlogPostsPreviewListEmpty v-if="!isLoading && isEmpty" />
+          <LazySharedUiPagination v-if="!isEmpty"
+                                  :has-next-page="hasNextPage"
                                   @changePage="fixPagePosition"
           />
         </SharedUiLoadingContentWrapper>
@@ -33,19 +33,21 @@ import {
   defineComponent, useContext, ref, computed, watch, onMounted,
 } from '@nuxtjs/composition-api';
 
-import { useBlog } from '@/composables/useBlog';
+import { usePosts } from '@/composables/usePosts';
+import { POSTS_LIST_LIMIT_PER_PAGE } from '@/utils/consts';
 
 export default defineComponent({
   setup() {
     const { query } = useContext();
-    const {
-      posts, isPostsEmpty, isLoadingPosts, postsHasNextPage, getPosts,
-    } = useBlog();
+    const { getPosts, posts, isLoading, isEmpty } = usePosts();
     const fakeLoading = ref<Boolean>(false);
 
     watch(
       () => query.value?.page,
-      () => getPosts(),
+      (newPage) => getPosts({
+        limit: POSTS_LIST_LIMIT_PER_PAGE,
+        page: Number(newPage),
+      }),
       { immediate: true },
     );
 
@@ -61,9 +63,9 @@ export default defineComponent({
 
     return {
       posts,
-      isPostsEmpty,
-      isLoading: computed(() => isLoadingPosts.value || fakeLoading.value),
-      postsHasNextPage,
+      isEmpty,
+      isLoading: computed(() => isLoading.value || fakeLoading.value),
+      hasNextPage: computed(() => posts.value?.length === POSTS_LIST_LIMIT_PER_PAGE),
       fixPagePosition,
     };
   },

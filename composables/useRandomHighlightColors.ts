@@ -1,12 +1,12 @@
 import { COLORS_FOR_HIGHLIGHTS } from '@/utils/consts';
 
-interface UseRandomHighlightColorsComposable {
+export type UseRandomHighlightColorsComposableReturn = {
   color: string
 }
 
-export const useRandomHighlightColors = (): UseRandomHighlightColorsComposable => {
+export function useRandomHighlightColors(): UseRandomHighlightColorsComposableReturn {
   const color = COLORS_FOR_HIGHLIGHTS[Math.floor(Math.random() * COLORS_FOR_HIGHLIGHTS.length)];
   return {
     color,
   };
-};
+}
