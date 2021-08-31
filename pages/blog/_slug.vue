@@ -1,39 +1,45 @@
 <template>
-  <article v-if="post">
-    <div class="lg:px-20">
-      <SharedUiPageHeader main
-                          :title="post.title"
-                          data-aos="zoom-y-in"
-      />
-      <div class="flex items-center space-x-4 mt-4 mb-8"
-           data-aos="zoom-y-in"
-           data-aos-delay="100"
+  <article>
+    <SharedUiLoadingContentWrapper :is-loading="isLoading"
+                                   animation="none"
+    >
+      <div v-if="post"
+           class="lg:px-20"
       >
-        <BlogPostAuthor v-if="post.author"
-                        :avatar="post.author.avatar"
-                        :name="post.author.name"
+        <SharedUiPageHeader main
+                            :title="post.title"
+                            data-aos="zoom-y-in"
         />
-        <div class="app-dot-divider" />
-        <time class="text-sm text-gray-500">{{ formatDate(post.date) }}</time>
-      </div>
-      <SharedUiImage :src="post.thumbnail"
-                     :title="post.title"
-                     :alt="post.title"
-                     custom-class="object-fit max-w-full h-auto rounded-lg"
-                     width="675px"
-                     height="380px"
-                     data-aos="zoom-y-in"
-                     data-aos-delay="200"
-      />
-      <div class="mt-10">
-        <nuxt-content :document="post"
-                      data-aos="zoom-y-in"
-                      data-aos-delay="300"
+        <div class="flex items-center space-x-4 mt-4 mb-8"
+             data-aos="zoom-y-in"
+             data-aos-delay="100"
+        >
+          <BlogPostAuthor v-if="post.author"
+                          :avatar="post.author.avatar"
+                          :name="post.author.name"
+          />
+          <div class="app-dot-divider" />
+          <time class="text-sm text-gray-500">{{ formatDate(post.date) }}</time>
+        </div>
+        <SharedUiImage :src="post.thumbnail"
+                       :title="post.title"
+                       :alt="post.title"
+                       custom-class="object-fit max-w-full h-auto rounded-lg"
+                       width="675px"
+                       height="380px"
+                       data-aos="zoom-y-in"
+                       data-aos-delay="200"
         />
+        <div class="mt-10">
+          <nuxt-content :document="post"
+                        data-aos="zoom-y-in"
+                        data-aos-delay="300"
+          />
+        </div>
       </div>
-    </div>
 
-    <BlogBannerAfterPostReading data-aos="zoom-y-in" />
+      <BlogBannerAfterPostReading data-aos="zoom-y-in" />
+    </SharedUiLoadingContentWrapper>
   </article>
 </template>
 
@@ -48,7 +54,7 @@ export default defineComponent({
   setup() {
     const { formatDate } = useHelpers();
     const { params } = useContext();
-    const { post, getPost } = usePost();
+    const { getPost, post, isLoading } = usePost();
     const { slug } = params.value;
 
     getPost(slug);
@@ -66,6 +72,7 @@ export default defineComponent({
 
     return {
       post,
+      isLoading,
       formatDate,
     };
   },
