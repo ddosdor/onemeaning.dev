@@ -1,5 +1,5 @@
 ---
-isDraft: true
+isDraft: false
 title: Vite, Vue 3, Typescript and good old '@' alias
 date: 2021-10-12T11:13:18
 thumbnail: images/blog/thumbnails/vue-vite-typescript-and-good-old-alias.png
