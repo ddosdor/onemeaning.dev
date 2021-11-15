@@ -1,0 +1,26 @@
+---
+label: Post template
+hide_body: false
+fields:
+- type: boolean
+  name: isDraft
+  label: isDraft
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: date
+  label: date
+- type: file
+  name: thumbnail
+  label: thumbnail
+- type: field_group
+  name: author
+  label: author
+  fields:
+  - type: file
+    name: avatar
+    label: avatar
+  - type: text
+    name: name
+    label: name
