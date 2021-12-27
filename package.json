@@ -13,7 +13,7 @@
     "test": "jest"
   },
   "engines": {
-    "node": "14.17.5"
+    "node": "16.13.1"
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
